@@ -2,7 +2,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Script de Microsoft Clarity -->
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -12,32 +11,432 @@
   </script>
 
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; padding: 16px; margin: 0; }
-    h1 { font-size: 1.5rem; text-align: center; color: #38bdf8; margin-bottom: 20px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; padding: 16px; margin: 0; user-select: none; }
+    h1 { font-size: 1.5rem; text-align: center; color: #38bdf8; margin-bottom: 8px; }
+    .instruccion { text-align: center; font-size: 0.8rem; color: #94a3b8; margin-bottom: 20px; }
+    
     .filtros { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 25px; }
     .filtros button { background: #334155; color: #f8fafc; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; font-size: 0.95rem; }
     .filtros button:hover, .filtros button.active { background: #38bdf8; color: #0f172a; font-weight: bold; }
+    
     .seccion-persona { margin-bottom: 20px; }
-    h2 { color: #38bdf8; font-size: 1.2rem; border-bottom: 2px solid #334155; padding-bottom: 8px; margin-top: 20px; cursor: pointer; user-select: none; display: flex; justify-content: space-between; align-items: center; }
+    h2 { color: #38bdf8; font-size: 1.2rem; border-bottom: 2px solid #334155; padding-bottom: 8px; margin-top: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
     h2::after { content: '▼'; font-size: 0.8rem; color: #94a3b8; transition: transform 0.3s; }
     h2.collapsed::after { transform: rotate(-90deg); }
     .contenido-persona { overflow: hidden; }
-    .card { background: #1e293b; padding: 15px; margin-bottom: 12px; border-radius: 8px; border-left: 5px solid #38bdf8; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+    
+    .card-wrapper { position: relative; margin-bottom: 12px; overflow: hidden; border-radius: 8px; }
+    
+    .card { background: #1e293b; padding: 15px; border-radius: 8px; border-left: 5px solid #38bdf8; box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: transform 0.15s ease-out; position: relative; z-index: 2; touch-action: pan-y; }
     .card.vencida { border-left-color: #ef4444; }
     .card.hoy { border-left-color: #f59e0b; }
+    .card.completada { border-left-color: #22c55e; background: #14231e; opacity: 0.85; }
+    .card.completada .titulo { text-decoration: line-through; color: #86efac; }
+    
     .titulo { font-size: 1.05rem; font-weight: bold; line-height: 1.4; }
     .fecha { font-size: 0.85rem; color: #94a3b8; margin-top: 6px; }
     .fecha.sin-fecha { color: #64748b; font-style: italic; }
     .badge-hoy { background: #f59e0b; color: #0f172a; font-size: 0.7rem; font-weight: bold; padding: 2px 6px; border-radius: 4px; margin-left: 6px; }
+    .badge-revisar { background: #22c55e; color: #0f172a; font-size: 0.7rem; font-weight: bold; padding: 2px 6px; border-radius: 4px; margin-left: 6px; }
     .notas { font-size: 0.9rem; color: #cbd5e1; margin-top: 10px; padding-top: 10px; border-top: 1px solid #334155; line-height: 1.5; }
+    
+    /* Overlay de confirmación */
+    .confirm-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: #166534; color: #fff; z-index: 3; display: none; align-items: center; justify-content: space-between; padding: 0 15px; border-radius: 8px; }
+    .confirm-overlay.active { display: flex; }
+    .confirm-texto { font-size: 0.9rem; font-weight: bold; }
+    .confirm-acciones { display: flex; gap: 8px; }
+    .btn-action { border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; cursor: pointer; }
+    .btn-si { background: #22c55e; color: #0f172a; }
+    .btn-no { background: #334155; color: #f8fafc; }
+    
     .footer { text-align: center; font-size: 0.75rem; color: #64748b; margin-top: 40px; border-top: 1px solid #1e293b; padding-top: 15px; }
   </style></head><body>
   <h1>📋 Tareas del Equipo</h1>
+  <div class="instruccion">👉 En móvil: desliza a la derecha. En PC: haz doble clic para marcar.</div>
+  
   <div class="filtros">
-    <button onclick="filtrar('todos')" class="active">Ver Todos</button><button onclick="filtrar('Iraida')">Iraida (1)</button><button onclick="filtrar('Josefina')">Josefina (6)</button><button onclick="filtrar('Mairelis')">Mairelis (1)</button><button onclick="filtrar('Martica')">Martica (1)</button><button onclick="filtrar('Melliza')">Melliza (3)</button><button onclick="filtrar('Yamile')">Yamile (6)</button><button onclick="filtrar('Abastecedora')">Abastecedora (9)</button></div><div class="seccion-persona" data-persona="Iraida"><h2 onclick="toggleAcordeon(this)">👤 Iraida (1)</h2><div class="contenido-persona"><div class="card vencida"><div class="titulo">Adiestramiento de Iraida</div><div class="fecha">📅 Vence: 21 Ago 2026</div><div class="notas">Mairelis</div></div></div></div><div class="seccion-persona" data-persona="Josefina"><h2 onclick="toggleAcordeon(this)">👤 Josefina (6)</h2><div class="contenido-persona"><div class="card vencida"><div class="titulo">Recoger órdenes directas en el archivador negro</div><div class="fecha">📅 Vence: 20 Ago 2026</div><div class="notas">Josefina</div></div><div class="card"><div class="titulo">Vinculación del taller</div><div class="fecha">📅 Vence: 25 Ago 2026</div><div class="notas">Josefina</div></div><div class="card vencida"><div class="titulo">Incidencias de cuadro</div><div class="fecha">📅 Vence: 20 Ago 2026</div><div class="notas">Josefina</div></div><div class="card vencida"><div class="titulo">Revisar que Yuri haya pasado las incidencias</div><div class="fecha">📅 Vence: 20 Ago 2026</div><div class="notas">Josefina</div></div><div class="card vencida"><div class="titulo">Miércoles preparación política a las nueve de la mañana</div><div class="fecha">📅 Vence: 19 Ago 2026</div><div class="notas">Josefina</div></div><div class="card vencida"><div class="titulo">Que Josefina brinde la información de los que están ocupando cargos y no están ejerciendo</div><div class="fecha">📅 Vence: 20 Ago 2026</div></div></div></div><div class="seccion-persona" data-persona="Mairelis"><h2 onclick="toggleAcordeon(this)">👤 Mairelis (1)</h2><div class="contenido-persona"><div class="card vencida"><div class="titulo">Adiestramiento de Iraida</div><div class="fecha">📅 Vence: 21 Ago 2026</div><div class="notas">Mairelis</div></div></div></div><div class="seccion-persona" data-persona="Martica"><h2 onclick="toggleAcordeon(this)">👤 Martica (1)</h2><div class="contenido-persona"><div class="card vencida"><div class="titulo">⚠️ Inventario 100% AFT Aseg.</div><div class="fecha">📅 Vence: 05 Ago 2026</div><div class="notas">[ ] Responsabilizar a Martica con la tarea <br>[ ] Designar comisión para el conteo<br>[ ] Que se imprima inventario por locales <br>[ ] Poner día en calendario para realizar el conteo y especificar el local<br>[ ] Que se firmen las actas de fijación de inventario cuando se haga el conteo en cada local <br>[ ] Informar al Jefe los resultados del conteo <br>[ ] Confeccionar movimientos de traslado <br>[ ] Confeccionar movimientos de baja<br>[ ] Entregar actas de responsabilidad actualizadas</div></div></div></div><div class="seccion-persona" data-persona="Melliza"><h2 onclick="toggleAcordeon(this)">👤 Melliza (3)</h2><div class="contenido-persona"><div class="card vencida"><div class="titulo">Depositar cheque  agropecuario</div><div class="fecha">📅 Vence: 21 Ago 2026</div><div class="notas">Abastecedora, Melliza</div></div><div class="card"><div class="titulo">Vi un pago de Guaimaro o de  Sibanicú a  la empresa cárnica las tunas  ver si eso tiene contrato en aseguramiento</div><div class="fecha">📅 Vence: 27 Ago 2026</div><div class="notas">Melliza </div></div><div class="card vencida"><div class="titulo">Con Seydel cambiar usuarios de banca remota</div><div class="fecha">📅 Vence: 27 May 2026</div><div class="notas">Melliza</div></div></div></div><div class="seccion-persona" data-persona="Yamile"><h2 onclick="toggleAcordeon(this)">👤 Yamile (6)</h2><div class="contenido-persona"><div class="card vencida"><div class="titulo">Depurar AFT Abastecedora</div><div class="fecha">📅 Vence: 29 Jul 2026</div><div class="notas">[ ] Actas de responsabilidad <br>[ ] Depurar faltantes. <br><br>Yamile</div></div><div class="card vencida"><div class="titulo">Factura de mantenimiento U81-2600383 por 1622.28 del municipio Esmeralda se pagó pendiente que entreguen la factura pago realizado por cheque</div><div class="fecha">📅 Vence: 12 Ago 2026</div><div class="notas">Yamile</div></div><div class="card vencida"><div class="titulo">Revisar backlog de Invent. AFT Aseguramiento</div><div class="fecha">📅 Vence: 03 Ago 2026</div><div class="notas">Yamile</div></div><div class="card vencida"><div class="titulo">Descuadres Norma 11 AFT</div><div class="fecha">📅 Vence: 21 Ago 2026</div><div class="notas">[ ] Dif 375 casa de visitas <br>[ ] JimaguYu dif el la 375<br>[ ] Najasa en la 192 <br>[ ] Nuevitas dif 192<br><br>Yamile</div></div><div class="card vencida"><div class="titulo">Ver con Manso las 3 turbinas que están en la 245</div><div class="fecha">📅 Vence: 21 Ago 2026</div><div class="notas">Yamile</div></div><div class="card vencida"><div class="titulo">Movimiento de la Batidora del Jefe</div><div class="fecha">📅 Vence: 18 Ago 2026</div><div class="notas">Yamile</div></div></div></div><div class="seccion-persona" data-persona="Abastecedora"><h2 onclick="toggleAcordeon(this)">👤 Abastecedora (9)</h2><div class="contenido-persona"><div class="card vencida"><div class="titulo">Depositar cheque  agropecuario</div><div class="fecha">📅 Vence: 21 Ago 2026</div><div class="notas">Abastecedora, Melliza</div></div><div class="card vencida"><div class="titulo">Listado d precios 
+    <button onclick="filtrar('todos')" class="active">Ver Todos</button><button onclick="filtrar('Iraida')">Iraida (1)</button><button onclick="filtrar('Josefina')">Josefina (6)</button><button onclick="filtrar('Mairelis')">Mairelis (1)</button><button onclick="filtrar('Martica')">Martica (1)</button><button onclick="filtrar('Melliza')">Melliza (3)</button><button onclick="filtrar('Yamile')">Yamile (6)</button><button onclick="filtrar('Abastecedora')">Abastecedora (9)</button></div><div class="seccion-persona" data-persona="Iraida"><h2 onclick="toggleAcordeon(this)">👤 Iraida (1)</h2><div class="contenido-persona">
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="M2prVERHc1RZbkczM19Jeg" data-completada="false">
+            <div class="titulo">Adiestramiento de Iraida</div>
+            <div class="fecha">📅 Vence: 21 Ago 2026</div>
+            <div class="notas">Mairelis</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-M2prVERHc1RZbkczM19Jeg">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('M2prVERHc1RZbkczM19Jeg')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('M2prVERHc1RZbkczM19Jeg')">Deshacer</button>
+            </div>
+          </div>
+        </div></div></div><div class="seccion-persona" data-persona="Josefina"><h2 onclick="toggleAcordeon(this)">👤 Josefina (6)</h2><div class="contenido-persona">
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="LUVkY0xWMm8tZFVoeEl0Uw" data-completada="false">
+            <div class="titulo">Recoger órdenes directas en el archivador negro</div>
+            <div class="fecha">📅 Vence: 20 Ago 2026</div>
+            <div class="notas">Josefina</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-LUVkY0xWMm8tZFVoeEl0Uw">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('LUVkY0xWMm8tZFVoeEl0Uw')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('LUVkY0xWMm8tZFVoeEl0Uw')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card" data-id="S1ZRNlByTlM2QS1jMkZWWQ" data-completada="false">
+            <div class="titulo">Vinculación del taller</div>
+            <div class="fecha">📅 Vence: 25 Ago 2026</div>
+            <div class="notas">Josefina</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-S1ZRNlByTlM2QS1jMkZWWQ">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('S1ZRNlByTlM2QS1jMkZWWQ')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('S1ZRNlByTlM2QS1jMkZWWQ')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="S2dodXhJTEI2YlpoNmxBMw" data-completada="false">
+            <div class="titulo">Incidencias de cuadro</div>
+            <div class="fecha">📅 Vence: 20 Ago 2026</div>
+            <div class="notas">Josefina</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-S2dodXhJTEI2YlpoNmxBMw">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('S2dodXhJTEI2YlpoNmxBMw')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('S2dodXhJTEI2YlpoNmxBMw')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="UGxPYkljaV9RMXBPLW9hTg" data-completada="false">
+            <div class="titulo">Revisar que Yuri haya pasado las incidencias</div>
+            <div class="fecha">📅 Vence: 20 Ago 2026</div>
+            <div class="notas">Josefina</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-UGxPYkljaV9RMXBPLW9hTg">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('UGxPYkljaV9RMXBPLW9hTg')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('UGxPYkljaV9RMXBPLW9hTg')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="Mi1ZenpXX3RONE9QY21DLQ" data-completada="false">
+            <div class="titulo">Miércoles preparación política a las nueve de la mañana</div>
+            <div class="fecha">📅 Vence: 19 Ago 2026</div>
+            <div class="notas">Josefina</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-Mi1ZenpXX3RONE9QY21DLQ">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('Mi1ZenpXX3RONE9QY21DLQ')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('Mi1ZenpXX3RONE9QY21DLQ')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="bVVERGhvUmNMUGM3dFAxZw" data-completada="false">
+            <div class="titulo">Que Josefina brinde la información de los que están ocupando cargos y no están ejerciendo</div>
+            <div class="fecha">📅 Vence: 20 Ago 2026</div>
+            
+          </div>
+          <div class="confirm-overlay" id="overlay-bVVERGhvUmNMUGM3dFAxZw">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('bVVERGhvUmNMUGM3dFAxZw')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('bVVERGhvUmNMUGM3dFAxZw')">Deshacer</button>
+            </div>
+          </div>
+        </div></div></div><div class="seccion-persona" data-persona="Mairelis"><h2 onclick="toggleAcordeon(this)">👤 Mairelis (1)</h2><div class="contenido-persona">
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="M2prVERHc1RZbkczM19Jeg" data-completada="false">
+            <div class="titulo">Adiestramiento de Iraida</div>
+            <div class="fecha">📅 Vence: 21 Ago 2026</div>
+            <div class="notas">Mairelis</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-M2prVERHc1RZbkczM19Jeg">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('M2prVERHc1RZbkczM19Jeg')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('M2prVERHc1RZbkczM19Jeg')">Deshacer</button>
+            </div>
+          </div>
+        </div></div></div><div class="seccion-persona" data-persona="Martica"><h2 onclick="toggleAcordeon(this)">👤 Martica (1)</h2><div class="contenido-persona">
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="a1d5V3I1cVNOMHNQaEpyNg" data-completada="false">
+            <div class="titulo">⚠️ Inventario 100% AFT Aseg.</div>
+            <div class="fecha">📅 Vence: 05 Ago 2026</div>
+            <div class="notas">[ ] Responsabilizar a Martica con la tarea <br>[ ] Designar comisión para el conteo<br>[ ] Que se imprima inventario por locales <br>[ ] Poner día en calendario para realizar el conteo y especificar el local<br>[ ] Que se firmen las actas de fijación de inventario cuando se haga el conteo en cada local <br>[ ] Informar al Jefe los resultados del conteo <br>[ ] Confeccionar movimientos de traslado <br>[ ] Confeccionar movimientos de baja<br>[ ] Entregar actas de responsabilidad actualizadas</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-a1d5V3I1cVNOMHNQaEpyNg">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('a1d5V3I1cVNOMHNQaEpyNg')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('a1d5V3I1cVNOMHNQaEpyNg')">Deshacer</button>
+            </div>
+          </div>
+        </div></div></div><div class="seccion-persona" data-persona="Melliza"><h2 onclick="toggleAcordeon(this)">👤 Melliza (3)</h2><div class="contenido-persona">
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="WGE1Z0FQcU9JczJUeWZmag" data-completada="false">
+            <div class="titulo">Depositar cheque  agropecuario</div>
+            <div class="fecha">📅 Vence: 21 Ago 2026</div>
+            <div class="notas">Abastecedora, Melliza</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-WGE1Z0FQcU9JczJUeWZmag">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('WGE1Z0FQcU9JczJUeWZmag')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('WGE1Z0FQcU9JczJUeWZmag')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card" data-id="MnFmQ1VfeXVtV3lmRFoxYw" data-completada="false">
+            <div class="titulo">Vi un pago de Guaimaro o de  Sibanicú a  la empresa cárnica las tunas  ver si eso tiene contrato en aseguramiento</div>
+            <div class="fecha">📅 Vence: 27 Ago 2026</div>
+            <div class="notas">Melliza </div>
+          </div>
+          <div class="confirm-overlay" id="overlay-MnFmQ1VfeXVtV3lmRFoxYw">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('MnFmQ1VfeXVtV3lmRFoxYw')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('MnFmQ1VfeXVtV3lmRFoxYw')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="cWVJMm9CdERCV1JKWk1LRA" data-completada="false">
+            <div class="titulo">Con Seydel cambiar usuarios de banca remota</div>
+            <div class="fecha">📅 Vence: 27 May 2026</div>
+            <div class="notas">Melliza</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-cWVJMm9CdERCV1JKWk1LRA">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('cWVJMm9CdERCV1JKWk1LRA')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('cWVJMm9CdERCV1JKWk1LRA')">Deshacer</button>
+            </div>
+          </div>
+        </div></div></div><div class="seccion-persona" data-persona="Yamile"><h2 onclick="toggleAcordeon(this)">👤 Yamile (6)</h2><div class="contenido-persona">
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="TjktaGlaNjRyeUxBNVczYg" data-completada="false">
+            <div class="titulo">Depurar AFT Abastecedora</div>
+            <div class="fecha">📅 Vence: 29 Jul 2026</div>
+            <div class="notas">[ ] Actas de responsabilidad <br>[ ] Depurar faltantes. <br><br>Yamile</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-TjktaGlaNjRyeUxBNVczYg">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('TjktaGlaNjRyeUxBNVczYg')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('TjktaGlaNjRyeUxBNVczYg')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="anp1VkxCdHp0Z2ZXc1dVag" data-completada="false">
+            <div class="titulo">Factura de mantenimiento U81-2600383 por 1622.28 del municipio Esmeralda se pagó pendiente que entreguen la factura pago realizado por cheque</div>
+            <div class="fecha">📅 Vence: 12 Ago 2026</div>
+            <div class="notas">Yamile</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-anp1VkxCdHp0Z2ZXc1dVag">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('anp1VkxCdHp0Z2ZXc1dVag')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('anp1VkxCdHp0Z2ZXc1dVag')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="endRb21aVF8wWjN0OERQUw" data-completada="false">
+            <div class="titulo">Revisar backlog de Invent. AFT Aseguramiento</div>
+            <div class="fecha">📅 Vence: 03 Ago 2026</div>
+            <div class="notas">Yamile</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-endRb21aVF8wWjN0OERQUw">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('endRb21aVF8wWjN0OERQUw')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('endRb21aVF8wWjN0OERQUw')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="Y2NHRW9Da1hsdVdwOXlPMw" data-completada="false">
+            <div class="titulo">Descuadres Norma 11 AFT</div>
+            <div class="fecha">📅 Vence: 21 Ago 2026</div>
+            <div class="notas">[ ] Dif 375 casa de visitas <br>[ ] JimaguYu dif el la 375<br>[ ] Najasa en la 192 <br>[ ] Nuevitas dif 192<br><br>Yamile</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-Y2NHRW9Da1hsdVdwOXlPMw">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('Y2NHRW9Da1hsdVdwOXlPMw')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('Y2NHRW9Da1hsdVdwOXlPMw')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="OGZPNFd1dkVSTGJHeUV4bA" data-completada="false">
+            <div class="titulo">Ver con Manso las 3 turbinas que están en la 245</div>
+            <div class="fecha">📅 Vence: 21 Ago 2026</div>
+            <div class="notas">Yamile</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-OGZPNFd1dkVSTGJHeUV4bA">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('OGZPNFd1dkVSTGJHeUV4bA')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('OGZPNFd1dkVSTGJHeUV4bA')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="dzZMaXhSVVZ6dlFWWmFycw" data-completada="false">
+            <div class="titulo">Movimiento de la Batidora del Jefe</div>
+            <div class="fecha">📅 Vence: 18 Ago 2026</div>
+            <div class="notas">Yamile</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-dzZMaXhSVVZ6dlFWWmFycw">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('dzZMaXhSVVZ6dlFWWmFycw')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('dzZMaXhSVVZ6dlFWWmFycw')">Deshacer</button>
+            </div>
+          </div>
+        </div></div></div><div class="seccion-persona" data-persona="Abastecedora"><h2 onclick="toggleAcordeon(this)">👤 Abastecedora (9)</h2><div class="contenido-persona">
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="WGE1Z0FQcU9JczJUeWZmag" data-completada="false">
+            <div class="titulo">Depositar cheque  agropecuario</div>
+            <div class="fecha">📅 Vence: 21 Ago 2026</div>
+            <div class="notas">Abastecedora, Melliza</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-WGE1Z0FQcU9JczJUeWZmag">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('WGE1Z0FQcU9JczJUeWZmag')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('WGE1Z0FQcU9JczJUeWZmag')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="VlYxWmFldXZHbUxXdnRfWQ" data-completada="false">
+            <div class="titulo">Listado d precios 
 
 Cárnico las tunas 
-Cárnico Florida</div><div class="fecha">📅 Vence: 30 Jul 2026</div><div class="notas">Abastecedora</div></div><div class="card"><div class="titulo">Listado de 10% que faltan</div><div class="fecha">📅 Vence: 27 Ago 2026</div><div class="notas">Abastecedora</div></div><div class="card vencida"><div class="titulo">Se le va a hacer un cheque a Cuba soy por un importe de dos millones 138 mil 840.76 no está al contrario el cheque no se va a entregar hasta tanto no se cuente con el contrato firmado</div><div class="fecha">📅 Vence: 13 Ago 2026</div><div class="notas">Abastecedora</div></div><div class="card vencida"><div class="titulo">Ver si existe contrato con la empresa agroindustrial ruta invasora</div><div class="fecha">📅 Vence: 19 Ago 2026</div><div class="notas">Abastecedora</div></div><div class="card vencida"><div class="titulo">Cancelar los cheques en tránsitos de frutas Selecta</div><div class="fecha">📅 Vence: 20 Ago 2026</div><div class="notas">Quitarnos de la disponibilidad como tránsito y contabilizar la transferencia bancaria<br><br>Abastecedora</div></div><div class="card vencida"><div class="titulo">Contrato de pesca Nuevitas en el archivador</div><div class="fecha">📅 Vence: 20 Ago 2026</div><div class="notas">Abastecedora</div></div><div class="card vencida"><div class="titulo">Falta contrato de Ruta invasora para pagar el arroz</div><div class="fecha">📅 Vence: 20 Ago 2026</div><div class="notas">Abastecedora</div></div><div class="card vencida"><div class="titulo">Depurar AFT Abastecedora</div><div class="fecha">📅 Vence: 29 Jul 2026</div><div class="notas">[ ] Actas de responsabilidad <br>[ ] Depurar faltantes. <br><br>Yamile</div></div></div></div>
+Cárnico Florida</div>
+            <div class="fecha">📅 Vence: 30 Jul 2026</div>
+            <div class="notas">Abastecedora</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-VlYxWmFldXZHbUxXdnRfWQ">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('VlYxWmFldXZHbUxXdnRfWQ')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('VlYxWmFldXZHbUxXdnRfWQ')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card" data-id="US1JQ2pKcEdsdHhPSzNGSw" data-completada="false">
+            <div class="titulo">Listado de 10% que faltan</div>
+            <div class="fecha">📅 Vence: 27 Ago 2026</div>
+            <div class="notas">Abastecedora</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-US1JQ2pKcEdsdHhPSzNGSw">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('US1JQ2pKcEdsdHhPSzNGSw')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('US1JQ2pKcEdsdHhPSzNGSw')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="a01pSHdHaml5Z0dwYnpFcA" data-completada="false">
+            <div class="titulo">Se le va a hacer un cheque a Cuba soy por un importe de dos millones 138 mil 840.76 no está al contrario el cheque no se va a entregar hasta tanto no se cuente con el contrato firmado</div>
+            <div class="fecha">📅 Vence: 13 Ago 2026</div>
+            <div class="notas">Abastecedora</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-a01pSHdHaml5Z0dwYnpFcA">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('a01pSHdHaml5Z0dwYnpFcA')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('a01pSHdHaml5Z0dwYnpFcA')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="RlJEZGpYLVRfbWNNRXJWLQ" data-completada="false">
+            <div class="titulo">Ver si existe contrato con la empresa agroindustrial ruta invasora</div>
+            <div class="fecha">📅 Vence: 19 Ago 2026</div>
+            <div class="notas">Abastecedora</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-RlJEZGpYLVRfbWNNRXJWLQ">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('RlJEZGpYLVRfbWNNRXJWLQ')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('RlJEZGpYLVRfbWNNRXJWLQ')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="Z1FVY0g0SjJkUDd5UmtRNA" data-completada="false">
+            <div class="titulo">Cancelar los cheques en tránsitos de frutas Selecta</div>
+            <div class="fecha">📅 Vence: 20 Ago 2026</div>
+            <div class="notas">Quitarnos de la disponibilidad como tránsito y contabilizar la transferencia bancaria<br><br>Abastecedora</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-Z1FVY0g0SjJkUDd5UmtRNA">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('Z1FVY0g0SjJkUDd5UmtRNA')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('Z1FVY0g0SjJkUDd5UmtRNA')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="TkhfVGVHZE4wdFgzVTFtOA" data-completada="false">
+            <div class="titulo">Contrato de pesca Nuevitas en el archivador</div>
+            <div class="fecha">📅 Vence: 20 Ago 2026</div>
+            <div class="notas">Abastecedora</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-TkhfVGVHZE4wdFgzVTFtOA">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('TkhfVGVHZE4wdFgzVTFtOA')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('TkhfVGVHZE4wdFgzVTFtOA')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="aDNFM1drdWcwNDlidkNkSg" data-completada="false">
+            <div class="titulo">Falta contrato de Ruta invasora para pagar el arroz</div>
+            <div class="fecha">📅 Vence: 20 Ago 2026</div>
+            <div class="notas">Abastecedora</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-aDNFM1drdWcwNDlidkNkSg">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('aDNFM1drdWcwNDlidkNkSg')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('aDNFM1drdWcwNDlidkNkSg')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card vencida" data-id="TjktaGlaNjRyeUxBNVczYg" data-completada="false">
+            <div class="titulo">Depurar AFT Abastecedora</div>
+            <div class="fecha">📅 Vence: 29 Jul 2026</div>
+            <div class="notas">[ ] Actas de responsabilidad <br>[ ] Depurar faltantes. <br><br>Yamile</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-TjktaGlaNjRyeUxBNVczYg">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('TjktaGlaNjRyeUxBNVczYg')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('TjktaGlaNjRyeUxBNVczYg')">Deshacer</button>
+            </div>
+          </div>
+        </div></div></div>
   <div class="footer">🔄 Última actualización: 22 ago a las 19:05</div>
 
   <script>
@@ -61,6 +460,78 @@ Cárnico Florida</div><div class="fecha">📅 Vence: 30 Jul 2026</div><div class
       elementoH2.classList.toggle('collapsed');
       let contenido = elementoH2.nextElementSibling;
       contenido.style.display = (contenido.style.display === "none") ? "block" : "none";
+    }
+
+    // Lógica para Swipe y Doble Clic
+    document.querySelectorAll('.card').forEach(card => {
+      if (card.getAttribute('data-completada') === 'true') return;
+      
+      let startX = 0;
+      let currentX = 0;
+      let isSwiping = false;
+      let taskId = card.getAttribute('data-id');
+
+      // Táctil (Móvil)
+      card.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+        isSwiping = true;
+      }, { passive: true });
+
+      card.addEventListener('touchmove', e => {
+        if (!isSwiping) return;
+        currentX = e.touches[0].clientX - startX;
+        if (currentX > 0 && currentX < 120) {
+          card.style.transform = 'translateX(' + currentX + 'px)';
+        }
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        if (!isSwiping) return;
+        isSwiping = false;
+        if (currentX > 70) {
+          solicitarConfirmacion(taskId);
+        }
+        card.style.transform = 'translateX(0px)';
+        currentX = 0;
+      });
+
+      // Doble Clic (PC)
+      card.addEventListener('dblclick', () => {
+        solicitarConfirmacion(taskId);
+      });
+    });
+
+    function solicitarConfirmacion(taskId) {
+      let overlay = document.getElementById('overlay-' + taskId);
+      if (overlay) overlay.classList.add('active');
+    }
+
+    function cancelarCompletar(taskId) {
+      let overlay = document.getElementById('overlay-' + taskId);
+      if (overlay) overlay.classList.remove('active');
+    }
+
+    function ejecutarCompletar(taskId) {
+      let overlay = document.getElementById('overlay-' + taskId);
+      let card = overlay.previousElementSibling;
+      
+      overlay.querySelector('.confirm-texto').innerText = 'Enviando...';
+      
+      fetch('https://script.google.com/macros/s/AKfycbyPBrCQf5s8r9YisXc5wLMG7bLtyFph8Hg5Z2wPpv8vcScrkjmrsP7_8ej4gZuIUvg3UQ/exec?action=completar&taskId=' + taskId, { mode: 'no-cors' })
+        .then(() => {
+          overlay.classList.remove('active');
+          card.classList.add('completada');
+          card.setAttribute('data-completada', 'true');
+          
+          let tituloEl = card.querySelector('.titulo');
+          if (!tituloEl.querySelector('.badge-revisar')) {
+            tituloEl.innerHTML += ' <span class="badge-revisar">PENDIENTE CONFIRMAR</span>';
+          }
+        })
+        .catch(err => {
+          alert('Error de conexión.');
+          overlay.classList.remove('active');
+        });
     }
   </script>
   </body></html>
