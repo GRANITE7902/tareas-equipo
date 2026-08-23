@@ -367,9 +367,39 @@ Cárnico Florida</div>
             </div>
           </div>
         </div></div></div>
-  <div class="footer">🔄 Última actualización: 23 ago a las 10:50</div>
+  <div class="footer">🔄 Última actualización: 23 ago a las 10:51</div>
 
   <script>
+    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyPBrCQf5s8r9YisXc5wLMG7bLtyFph8Hg5Z2wPpv8vcScrkjmrsP7_8ej4gZuIUvg3UQ/exec';
+
+    function marcarCardComoCompletada(card) {
+      card.classList.add('completada');
+      card.setAttribute('data-completada', 'true');
+      let tituloEl = card.querySelector('.titulo');
+      if (!tituloEl.querySelector('.badge-revisar')) {
+        tituloEl.innerHTML += ' <span class="badge-revisar">PENDIENTE CONFIRMAR</span>';
+      }
+    }
+
+    // Consulta en vivo a Apps Script para actualizar el estado global para TODOS los miembros
+    function consultarEstadosEnVivo() {
+      fetch(WEB_APP_URL + '?action=obtenerCompletadas')
+        .then(res => res.json())
+        .then(data => {
+          if (data && data.completadas && Array.isArray(data.completadas)) {
+            document.querySelectorAll('.card').forEach(card => {
+              let id = card.getAttribute('data-id');
+              if (data.completadas.includes(id)) {
+                marcarCardComoCompletada(card);
+              }
+            });
+          }
+        })
+        .catch(e => console.log('Sincronización en vivo no disponible'));
+    }
+
+    document.addEventListener('DOMContentLoaded', consultarEstadosEnVivo);
+
     function filtrar(persona) {
       let secciones = document.querySelectorAll('.seccion-persona');
       let botones = document.querySelectorAll('.filtros button');
@@ -394,21 +424,18 @@ Cárnico Florida</div>
 
     // Lógica para Swipe y Doble Clic
     document.querySelectorAll('.card').forEach(card => {
-      if (card.getAttribute('data-completada') === 'true') return;
-      
       let startX = 0;
       let currentX = 0;
       let isSwiping = false;
-      let taskId = card.getAttribute('data-id');
 
-      // Táctil (Móvil)
       card.addEventListener('touchstart', e => {
+        if (card.getAttribute('data-completada') === 'true') return;
         startX = e.touches[0].clientX;
         isSwiping = true;
       }, { passive: true });
 
       card.addEventListener('touchmove', e => {
-        if (!isSwiping) return;
+        if (!isSwiping || card.getAttribute('data-completada') === 'true') return;
         currentX = e.touches[0].clientX - startX;
         if (currentX > 0 && currentX < 120) {
           card.style.transform = 'translateX(' + currentX + 'px)';
@@ -416,8 +443,9 @@ Cárnico Florida</div>
       }, { passive: true });
 
       card.addEventListener('touchend', () => {
-        if (!isSwiping) return;
+        if (!isSwiping || card.getAttribute('data-completada') === 'true') return;
         isSwiping = false;
+        let taskId = card.getAttribute('data-id');
         if (currentX > 70) {
           solicitarConfirmacion(taskId);
         }
@@ -425,8 +453,9 @@ Cárnico Florida</div>
         currentX = 0;
       });
 
-      // Doble Clic (PC)
       card.addEventListener('dblclick', () => {
+        if (card.getAttribute('data-completada') === 'true') return;
+        let taskId = card.getAttribute('data-id');
         solicitarConfirmacion(taskId);
       });
     });
@@ -447,19 +476,13 @@ Cárnico Florida</div>
       
       overlay.querySelector('.confirm-texto').innerText = 'Enviando...';
       
-      fetch('https://script.google.com/macros/s/AKfycbyPBrCQf5s8r9YisXc5wLMG7bLtyFph8Hg5Z2wPpv8vcScrkjmrsP7_8ej4gZuIUvg3UQ/exec?action=completar&taskId=' + taskId, { mode: 'no-cors' })
+      marcarCardComoCompletada(card);
+
+      fetch(WEB_APP_URL + '?action=completar&taskId=' + taskId, { mode: 'no-cors' })
         .then(() => {
           overlay.classList.remove('active');
-          card.classList.add('completada');
-          card.setAttribute('data-completada', 'true');
-          
-          let tituloEl = card.querySelector('.titulo');
-          if (!tituloEl.querySelector('.badge-revisar')) {
-            tituloEl.innerHTML += ' <span class="badge-revisar">PENDIENTE CONFIRMAR</span>';
-          }
         })
         .catch(err => {
-          alert('Error de conexión.');
           overlay.classList.remove('active');
         });
     }
