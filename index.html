@@ -99,8 +99,8 @@
           </div>
         </div></div></div><div class="seccion-persona" data-persona="Melliza"><h2 onclick="toggleAcordeon(this)">👤 Melliza (2)</h2><div class="contenido-persona">
         <div class="card-wrapper">
-          <div class="card card vencida" data-id="NllSb0ZwT0R3RW9xV0hURw" data-completada="false">
-            <div class="titulo">⚠️ (Urgente )Pagar a ruta invasora</div>
+          <div class="card card completada" data-id="NllSb0ZwT0R3RW9xV0hURw" data-completada="true">
+            <div class="titulo">⚠️ (Urgente )Pagar a ruta invasora <span class="badge-revisar">PENDIENTE CONFIRMAR</span></div>
             <div class="fecha">📅 Vence: 26 Ago 2026</div>
             <div class="notas">Es la factura de los 8 millones y pico esto es una decisión de la jefatura pagar urgente<br><br>Abastecedora, Melliza </div>
           </div>
@@ -225,6 +225,20 @@
           </div>
         </div></div></div><div class="seccion-persona" data-persona="Abastecedora"><h2 onclick="toggleAcordeon(this)">👤 Abastecedora (10)</h2><div class="contenido-persona">
         <div class="card-wrapper">
+          <div class="card card completada" data-id="NllSb0ZwT0R3RW9xV0hURw" data-completada="true">
+            <div class="titulo">⚠️ (Urgente )Pagar a ruta invasora <span class="badge-revisar">PENDIENTE CONFIRMAR</span></div>
+            <div class="fecha">📅 Vence: 26 Ago 2026</div>
+            <div class="notas">Es la factura de los 8 millones y pico esto es una decisión de la jefatura pagar urgente<br><br>Abastecedora, Melliza </div>
+          </div>
+          <div class="confirm-overlay" id="overlay-NllSb0ZwT0R3RW9xV0hURw">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('NllSb0ZwT0R3RW9xV0hURw')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('NllSb0ZwT0R3RW9xV0hURw')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
           <div class="card card" data-id="OG9henpBQXcxNjJLVWxvNw" data-completada="false">
             <div class="titulo">Firmar último cheque de Cuba soy y del carnico las tunas</div>
             <div class="fecha">📅 Vence: 29 Ago 2026</div>
@@ -277,20 +291,6 @@
             <div class="confirm-acciones">
               <button class="btn-action btn-si" onclick="ejecutarCompletar('aThNTFFkZDVKeC05a0liWA')">Sí, confirmar</button>
               <button class="btn-action btn-no" onclick="cancelarCompletar('aThNTFFkZDVKeC05a0liWA')">Deshacer</button>
-            </div>
-          </div>
-        </div>
-        <div class="card-wrapper">
-          <div class="card card vencida" data-id="NllSb0ZwT0R3RW9xV0hURw" data-completada="false">
-            <div class="titulo">⚠️ (Urgente )Pagar a ruta invasora</div>
-            <div class="fecha">📅 Vence: 26 Ago 2026</div>
-            <div class="notas">Es la factura de los 8 millones y pico esto es una decisión de la jefatura pagar urgente<br><br>Abastecedora, Melliza </div>
-          </div>
-          <div class="confirm-overlay" id="overlay-NllSb0ZwT0R3RW9xV0hURw">
-            <span class="confirm-texto">¿Marcar como completada?</span>
-            <div class="confirm-acciones">
-              <button class="btn-action btn-si" onclick="ejecutarCompletar('NllSb0ZwT0R3RW9xV0hURw')">Sí, confirmar</button>
-              <button class="btn-action btn-no" onclick="cancelarCompletar('NllSb0ZwT0R3RW9xV0hURw')">Deshacer</button>
             </div>
           </div>
         </div>
@@ -367,7 +367,7 @@ Cárnico Florida</div>
             </div>
           </div>
         </div></div></div>
-  <div class="footer">🔄 Última actualización: 28 ago a las 07:14</div>
+  <div class="footer">🔄 Última actualización: 28 ago a las 07:15</div>
 
   <script>
     const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyPBrCQf5s8r9YisXc5wLMG7bLtyFph8Hg5Z2wPpv8vcScrkjmrsP7_8ej4gZuIUvg3UQ/exec';
