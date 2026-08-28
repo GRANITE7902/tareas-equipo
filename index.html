@@ -197,6 +197,20 @@
           </div>
         </div></div></div><div class="seccion-persona" data-persona="Abastecedora"><h2 onclick="toggleAcordeon(this)">👤 Abastecedora (7)</h2><div class="contenido-persona">
         <div class="card-wrapper">
+          <div class="card card completada" data-id="US1JQ2pKcEdsdHhPSzNGSw" data-completada="true">
+            <div class="titulo">Listado de 10% que faltan <span class="badge-revisar">PENDIENTE CONFIRMAR</span></div>
+            <div class="fecha">📅 Vence: 27 Ago 2026</div>
+            <div class="notas">Abastecedora</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-US1JQ2pKcEdsdHhPSzNGSw">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('US1JQ2pKcEdsdHhPSzNGSw')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('US1JQ2pKcEdsdHhPSzNGSw')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
           <div class="card card completada" data-id="OG9henpBQXcxNjJLVWxvNw" data-completada="true">
             <div class="titulo">Firmar último cheque de Cuba soy y del carnico las tunas <span class="badge-revisar">PENDIENTE CONFIRMAR</span></div>
             <div class="fecha">📅 Vence: 29 Ago 2026</div>
@@ -242,20 +256,6 @@ Cárnico Florida</div>
           </div>
         </div>
         <div class="card-wrapper">
-          <div class="card card vencida" data-id="US1JQ2pKcEdsdHhPSzNGSw" data-completada="false">
-            <div class="titulo">Listado de 10% que faltan</div>
-            <div class="fecha">📅 Vence: 27 Ago 2026</div>
-            <div class="notas">Abastecedora</div>
-          </div>
-          <div class="confirm-overlay" id="overlay-US1JQ2pKcEdsdHhPSzNGSw">
-            <span class="confirm-texto">¿Marcar como completada?</span>
-            <div class="confirm-acciones">
-              <button class="btn-action btn-si" onclick="ejecutarCompletar('US1JQ2pKcEdsdHhPSzNGSw')">Sí, confirmar</button>
-              <button class="btn-action btn-no" onclick="cancelarCompletar('US1JQ2pKcEdsdHhPSzNGSw')">Deshacer</button>
-            </div>
-          </div>
-        </div>
-        <div class="card-wrapper">
           <div class="card card vencida" data-id="a01pSHdHaml5Z0dwYnpFcA" data-completada="false">
             <div class="titulo">Se le va a hacer un cheque a Cuba soy por un importe de dos millones 138 mil 840.76 no está al contrario el cheque no se va a entregar hasta tanto no se cuente con el contrato firmado</div>
             <div class="fecha">📅 Vence: 13 Ago 2026</div>
@@ -297,7 +297,7 @@ Cárnico Florida</div>
             </div>
           </div>
         </div></div></div>
-  <div class="footer">🔄 Última actualización: 28 ago a las 09:57</div>
+  <div class="footer">🔄 Última actualización: 28 ago a las 09:58</div>
 
   <script>
     const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyPBrCQf5s8r9YisXc5wLMG7bLtyFph8Hg5Z2wPpv8vcScrkjmrsP7_8ej4gZuIUvg3UQ/exec';
