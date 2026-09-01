@@ -57,22 +57,8 @@
   <div class="filtros">
     <button onclick="filtrar('todos')" class="active">Ver Todos</button><button onclick="filtrar('Josefina')">Josefina (2)</button><button onclick="filtrar('Mairelis')">Mairelis (1)</button><button onclick="filtrar('Melliza')">Melliza (1)</button><button onclick="filtrar('Yamile')">Yamile (5)</button><button onclick="filtrar('Yamilka')">Yamilka (1)</button></div><div class="seccion-persona" data-persona="Josefina"><h2 onclick="toggleAcordeon(this)">👤 Josefina (2)</h2><div class="contenido-persona">
         <div class="card-wrapper">
-          <div class="card card" data-id="S1ZRNlByTlM2QS1jMkZWWQ" data-completada="false">
-            <div class="titulo">Vinculación del taller</div>
-            <div class="fecha">📅 Vence: 25 Sep 2026</div>
-            <div class="notas">Josefina</div>
-          </div>
-          <div class="confirm-overlay" id="overlay-S1ZRNlByTlM2QS1jMkZWWQ">
-            <span class="confirm-texto">¿Marcar como completada?</span>
-            <div class="confirm-acciones">
-              <button class="btn-action btn-si" onclick="ejecutarCompletar('S1ZRNlByTlM2QS1jMkZWWQ')">Sí, confirmar</button>
-              <button class="btn-action btn-no" onclick="cancelarCompletar('S1ZRNlByTlM2QS1jMkZWWQ')">Deshacer</button>
-            </div>
-          </div>
-        </div>
-        <div class="card-wrapper">
-          <div class="card card" data-id="UGxPYkljaV9RMXBPLW9hTg" data-completada="false">
-            <div class="titulo">Revisar que Yuri haya pasado las incidencias</div>
+          <div class="card card completada" data-id="UGxPYkljaV9RMXBPLW9hTg" data-completada="true">
+            <div class="titulo">Revisar que Yuri haya pasado las incidencias <span class="badge-revisar">PENDIENTE CONFIRMAR</span></div>
             <div class="fecha">📅 Vence: 20 Sep 2026</div>
             <div class="notas">Josefina</div>
           </div>
@@ -81,6 +67,20 @@
             <div class="confirm-acciones">
               <button class="btn-action btn-si" onclick="ejecutarCompletar('UGxPYkljaV9RMXBPLW9hTg')">Sí, confirmar</button>
               <button class="btn-action btn-no" onclick="cancelarCompletar('UGxPYkljaV9RMXBPLW9hTg')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card completada" data-id="S1ZRNlByTlM2QS1jMkZWWQ" data-completada="true">
+            <div class="titulo">Vinculación del taller <span class="badge-revisar">PENDIENTE CONFIRMAR</span></div>
+            <div class="fecha">📅 Vence: 25 Sep 2026</div>
+            <div class="notas">Josefina</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-S1ZRNlByTlM2QS1jMkZWWQ">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('S1ZRNlByTlM2QS1jMkZWWQ')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('S1ZRNlByTlM2QS1jMkZWWQ')">Deshacer</button>
             </div>
           </div>
         </div></div></div><div class="seccion-persona" data-persona="Mairelis"><h2 onclick="toggleAcordeon(this)">👤 Mairelis (1)</h2><div class="contenido-persona">
@@ -196,7 +196,7 @@
             </div>
           </div>
         </div></div></div>
-  <div class="footer">🔄 Última actualización: 01 sept a las 07:48</div>
+  <div class="footer">🔄 Última actualización: 01 sept a las 07:49</div>
 
   <script>
     const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyPBrCQf5s8r9YisXc5wLMG7bLtyFph8Hg5Z2wPpv8vcScrkjmrsP7_8ej4gZuIUvg3UQ/exec';
