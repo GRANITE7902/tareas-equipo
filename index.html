@@ -55,7 +55,7 @@
   <div class="instruccion">👉 En móvil: desliza a la derecha. En PC: haz doble clic para marcar.</div>
   
   <div class="filtros">
-    <button onclick="filtrar('todos')" class="active">Ver Todos</button><button onclick="filtrar('Josefina')">Josefina (2)</button><button onclick="filtrar('Mairelis')">Mairelis (1)</button><button onclick="filtrar('Melliza')">Melliza (1)</button><button onclick="filtrar('Yamile')">Yamile (5)</button><button onclick="filtrar('Yamilka')">Yamilka (1)</button></div><div class="seccion-persona" data-persona="Josefina"><h2 onclick="toggleAcordeon(this)">👤 Josefina (2)</h2><div class="contenido-persona">
+    <button onclick="filtrar('todos')" class="active">Ver Todos</button><button onclick="filtrar('Josefina')">Josefina (2)</button><button onclick="filtrar('Mairelis')">Mairelis (2)</button><button onclick="filtrar('Melliza')">Melliza (1)</button><button onclick="filtrar('Yamile')">Yamile (5)</button><button onclick="filtrar('Yamilka')">Yamilka (1)</button><button onclick="filtrar('Abastecedora')">Abastecedora (1)</button></div><div class="seccion-persona" data-persona="Josefina"><h2 onclick="toggleAcordeon(this)">👤 Josefina (2)</h2><div class="contenido-persona">
         <div class="card-wrapper">
           <div class="card card completada" data-id="UGxPYkljaV9RMXBPLW9hTg" data-completada="true">
             <div class="titulo">Revisar que Yuri haya pasado las incidencias <span class="badge-revisar">PENDIENTE CONFIRMAR</span></div>
@@ -83,7 +83,21 @@
               <button class="btn-action btn-no" onclick="cancelarCompletar('S1ZRNlByTlM2QS1jMkZWWQ')">Deshacer</button>
             </div>
           </div>
-        </div></div></div><div class="seccion-persona" data-persona="Mairelis"><h2 onclick="toggleAcordeon(this)">👤 Mairelis (1)</h2><div class="contenido-persona">
+        </div></div></div><div class="seccion-persona" data-persona="Mairelis"><h2 onclick="toggleAcordeon(this)">👤 Mairelis (2)</h2><div class="contenido-persona">
+        <div class="card-wrapper">
+          <div class="card card" data-id="Y3J6T3FHYWwxOTJqZHd0Qw" data-completada="false">
+            <div class="titulo">⚠️ Norma 11 de todas las unidades presupuestada</div>
+            <div class="fecha">📅 Vence: 16 Sep 2026</div>
+            <div class="notas">📝 indicarlo a todas las unidades ejecutoras. <br><br>🛑 tienen que entregarlo aunque sea manuscrito. <br><br>📌 me dicen si tienen alguna duda. <br><br>Mairelis </div>
+          </div>
+          <div class="confirm-overlay" id="overlay-Y3J6T3FHYWwxOTJqZHd0Qw">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('Y3J6T3FHYWwxOTJqZHd0Qw')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('Y3J6T3FHYWwxOTJqZHd0Qw')">Deshacer</button>
+            </div>
+          </div>
+        </div>
         <div class="card-wrapper">
           <div class="card card hoy" data-id="UEx5bnVsZXNJNkVCZHo4RA" data-completada="false">
             <div class="titulo">📝</div>
@@ -195,8 +209,22 @@
               <button class="btn-action btn-no" onclick="cancelarCompletar('UEx5bnVsZXNJNkVCZHo4RA')">Deshacer</button>
             </div>
           </div>
+        </div></div></div><div class="seccion-persona" data-persona="Abastecedora"><h2 onclick="toggleAcordeon(this)">👤 Abastecedora (1)</h2><div class="contenido-persona">
+        <div class="card-wrapper">
+          <div class="card card" data-id="RThhTkNQZ05sLUVxTjYzSQ" data-completada="false">
+            <div class="titulo">Norma 11 y 10 porciento de   los almacenes</div>
+            <div class="fecha">📅 Vence: 11 Sep 2026</div>
+            <div class="notas">🛑 ⚠️ verificar su cumplimiento, imprimirlas  y exigir que se la entreguen firmadas.  <br><br>Abastecedora </div>
+          </div>
+          <div class="confirm-overlay" id="overlay-RThhTkNQZ05sLUVxTjYzSQ">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('RThhTkNQZ05sLUVxTjYzSQ')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('RThhTkNQZ05sLUVxTjYzSQ')">Deshacer</button>
+            </div>
+          </div>
         </div></div></div>
-  <div class="footer">🔄 Última actualización: 01 sept a las 22:12</div>
+  <div class="footer">🔄 Última actualización: 01 sept a las 22:13</div>
 
   <script>
     const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyPBrCQf5s8r9YisXc5wLMG7bLtyFph8Hg5Z2wPpv8vcScrkjmrsP7_8ej4gZuIUvg3UQ/exec';
