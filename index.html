@@ -55,7 +55,7 @@
   <div class="instruccion">👉 En móvil: desliza a la derecha. En PC: haz doble clic para marcar.</div>
   
   <div class="filtros">
-    <button onclick="filtrar('todos')" class="active">Ver Todos</button><button onclick="filtrar('Josefina')">Josefina (2)</button><button onclick="filtrar('Mairelis')">Mairelis (2)</button><button onclick="filtrar('Melliza')">Melliza (1)</button><button onclick="filtrar('Yamile')">Yamile (5)</button><button onclick="filtrar('Yamilka')">Yamilka (1)</button><button onclick="filtrar('Abastecedora')">Abastecedora (1)</button></div><div class="seccion-persona" data-persona="Josefina"><h2 onclick="toggleAcordeon(this)">👤 Josefina (2)</h2><div class="contenido-persona">
+    <button onclick="filtrar('todos')" class="active">Ver Todos</button><button onclick="filtrar('Josefina')">Josefina (2)</button><button onclick="filtrar('Mairelis')">Mairelis (2)</button><button onclick="filtrar('Melliza')">Melliza (4)</button><button onclick="filtrar('Yamile')">Yamile (5)</button><button onclick="filtrar('Yamilka')">Yamilka (3)</button><button onclick="filtrar('Abastecedora')">Abastecedora (4)</button></div><div class="seccion-persona" data-persona="Josefina"><h2 onclick="toggleAcordeon(this)">👤 Josefina (2)</h2><div class="contenido-persona">
         <div class="card-wrapper">
           <div class="card card completada" data-id="UGxPYkljaV9RMXBPLW9hTg" data-completada="true">
             <div class="titulo">Revisar que Yuri haya pasado las incidencias <span class="badge-revisar">PENDIENTE CONFIRMAR</span></div>
@@ -111,7 +111,49 @@
               <button class="btn-action btn-no" onclick="cancelarCompletar('UEx5bnVsZXNJNkVCZHo4RA')">Deshacer</button>
             </div>
           </div>
-        </div></div></div><div class="seccion-persona" data-persona="Melliza"><h2 onclick="toggleAcordeon(this)">👤 Melliza (1)</h2><div class="contenido-persona">
+        </div></div></div><div class="seccion-persona" data-persona="Melliza"><h2 onclick="toggleAcordeon(this)">👤 Melliza (4)</h2><div class="contenido-persona">
+        <div class="card-wrapper">
+          <div class="card card hoy" data-id="THJiOGswN29fem82T1BZUw" data-completada="false">
+            <div class="titulo">Salida de útiles cierre</div>
+            <div class="fecha">📅 Vence: 02 Sep 2026 <span class="badge-hoy">¡HOY!</span></div>
+            <div class="notas">Melliza, Yamilka</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-THJiOGswN29fem82T1BZUw">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('THJiOGswN29fem82T1BZUw')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('THJiOGswN29fem82T1BZUw')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card hoy" data-id="V1R0RXlNS1FNME0zeng1SQ" data-completada="false">
+            <div class="titulo">696 cierre</div>
+            <div class="fecha">📅 Vence: 02 Sep 2026 <span class="badge-hoy">¡HOY!</span></div>
+            <div class="notas">Melliza, Yamilka</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-V1R0RXlNS1FNME0zeng1SQ">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('V1R0RXlNS1FNME0zeng1SQ')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('V1R0RXlNS1FNME0zeng1SQ')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card hoy" data-id="LU9jZld3Zi0tRWNjUnFaTQ" data-completada="false">
+            <div class="titulo">Pagar por cheque a 564 de nuevitas y de kilo 7</div>
+            <div class="fecha">📅 Vence: 02 Sep 2026 <span class="badge-hoy">¡HOY!</span></div>
+            <div class="notas">📌 esto lo hacemos si nos da tiempo tener la chequeras antes del cierre..<br><br>📌 Melliza supervisa esto<br><br>Abastecedora, Melliza </div>
+          </div>
+          <div class="confirm-overlay" id="overlay-LU9jZld3Zi0tRWNjUnFaTQ">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('LU9jZld3Zi0tRWNjUnFaTQ')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('LU9jZld3Zi0tRWNjUnFaTQ')">Deshacer</button>
+            </div>
+          </div>
+        </div>
         <div class="card-wrapper">
           <div class="card card vencida" data-id="cWVJMm9CdERCV1JKWk1LRA" data-completada="false">
             <div class="titulo">Con Seydel cambiar usuarios de banca remota</div>
@@ -195,7 +237,35 @@
               <button class="btn-action btn-no" onclick="cancelarCompletar('anp1VkxCdHp0Z2ZXc1dVag')">Deshacer</button>
             </div>
           </div>
-        </div></div></div><div class="seccion-persona" data-persona="Yamilka"><h2 onclick="toggleAcordeon(this)">👤 Yamilka (1)</h2><div class="contenido-persona">
+        </div></div></div><div class="seccion-persona" data-persona="Yamilka"><h2 onclick="toggleAcordeon(this)">👤 Yamilka (3)</h2><div class="contenido-persona">
+        <div class="card-wrapper">
+          <div class="card card hoy" data-id="THJiOGswN29fem82T1BZUw" data-completada="false">
+            <div class="titulo">Salida de útiles cierre</div>
+            <div class="fecha">📅 Vence: 02 Sep 2026 <span class="badge-hoy">¡HOY!</span></div>
+            <div class="notas">Melliza, Yamilka</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-THJiOGswN29fem82T1BZUw">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('THJiOGswN29fem82T1BZUw')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('THJiOGswN29fem82T1BZUw')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card hoy" data-id="V1R0RXlNS1FNME0zeng1SQ" data-completada="false">
+            <div class="titulo">696 cierre</div>
+            <div class="fecha">📅 Vence: 02 Sep 2026 <span class="badge-hoy">¡HOY!</span></div>
+            <div class="notas">Melliza, Yamilka</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-V1R0RXlNS1FNME0zeng1SQ">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('V1R0RXlNS1FNME0zeng1SQ')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('V1R0RXlNS1FNME0zeng1SQ')">Deshacer</button>
+            </div>
+          </div>
+        </div>
         <div class="card-wrapper">
           <div class="card card vencida" data-id="UEx5bnVsZXNJNkVCZHo4RA" data-completada="false">
             <div class="titulo">📝</div>
@@ -209,7 +279,49 @@
               <button class="btn-action btn-no" onclick="cancelarCompletar('UEx5bnVsZXNJNkVCZHo4RA')">Deshacer</button>
             </div>
           </div>
-        </div></div></div><div class="seccion-persona" data-persona="Abastecedora"><h2 onclick="toggleAcordeon(this)">👤 Abastecedora (1)</h2><div class="contenido-persona">
+        </div></div></div><div class="seccion-persona" data-persona="Abastecedora"><h2 onclick="toggleAcordeon(this)">👤 Abastecedora (4)</h2><div class="contenido-persona">
+        <div class="card-wrapper">
+          <div class="card card hoy" data-id="LU9jZld3Zi0tRWNjUnFaTQ" data-completada="false">
+            <div class="titulo">Pagar por cheque a 564 de nuevitas y de kilo 7</div>
+            <div class="fecha">📅 Vence: 02 Sep 2026 <span class="badge-hoy">¡HOY!</span></div>
+            <div class="notas">📌 esto lo hacemos si nos da tiempo tener la chequeras antes del cierre..<br><br>📌 Melliza supervisa esto<br><br>Abastecedora, Melliza </div>
+          </div>
+          <div class="confirm-overlay" id="overlay-LU9jZld3Zi0tRWNjUnFaTQ">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('LU9jZld3Zi0tRWNjUnFaTQ')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('LU9jZld3Zi0tRWNjUnFaTQ')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card hoy" data-id="X1Bnc0lLcWJKOTBYNGpqag" data-completada="false">
+            <div class="titulo">Gestionar que se pague por cheque la 334 de prisiones</div>
+            <div class="fecha">📅 Vence: 02 Sep 2026 <span class="badge-hoy">¡HOY!</span></div>
+            <div class="notas">Abastecedora </div>
+          </div>
+          <div class="confirm-overlay" id="overlay-X1Bnc0lLcWJKOTBYNGpqag">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('X1Bnc0lLcWJKOTBYNGpqag')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('X1Bnc0lLcWJKOTBYNGpqag')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card" data-id="NVNJMDJWZ0hwWE5KQjRrVA" data-completada="false">
+            <div class="titulo">Norma 11 y 10 porciento de   los almacenes</div>
+            <div class="fecha">📅 Vence: 11 Sep 2026</div>
+            <div class="notas">🛑 ⚠️ verificar su cumplimiento, imprimirlas  y exigir que se la entreguen firmadas.  <br><br>Abastecedora </div>
+          </div>
+          <div class="confirm-overlay" id="overlay-NVNJMDJWZ0hwWE5KQjRrVA">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('NVNJMDJWZ0hwWE5KQjRrVA')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('NVNJMDJWZ0hwWE5KQjRrVA')">Deshacer</button>
+            </div>
+          </div>
+        </div>
         <div class="card-wrapper">
           <div class="card card" data-id="RThhTkNQZ05sLUVxTjYzSQ" data-completada="false">
             <div class="titulo">Norma 11 y 10 porciento de   los almacenes</div>
@@ -224,7 +336,7 @@
             </div>
           </div>
         </div></div></div>
-  <div class="footer">🔄 Última actualización: 02 sept a las 07:29</div>
+  <div class="footer">🔄 Última actualización: 02 sept a las 07:30</div>
 
   <script>
     const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyPBrCQf5s8r9YisXc5wLMG7bLtyFph8Hg5Z2wPpv8vcScrkjmrsP7_8ej4gZuIUvg3UQ/exec';
