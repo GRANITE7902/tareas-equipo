@@ -55,7 +55,7 @@
   <div class="instruccion">👉 En móvil: desliza a la derecha. En PC: haz doble clic para marcar.</div>
   
   <div class="filtros">
-    <button onclick="filtrar('todos')" class="active">Ver Todos</button><button onclick="filtrar('Mairelis')">Mairelis (2)</button><button onclick="filtrar('Melliza')">Melliza (2)</button><button onclick="filtrar('Yamile')">Yamile (3)</button><button onclick="filtrar('Abastecedora')">Abastecedora (2)</button></div><div class="seccion-persona" data-persona="Mairelis"><h2 onclick="toggleAcordeon(this)">👤 Mairelis (2)</h2><div class="contenido-persona">
+    <button onclick="filtrar('todos')" class="active">Ver Todos</button><button onclick="filtrar('Mairelis')">Mairelis (2)</button><button onclick="filtrar('Melliza')">Melliza (5)</button><button onclick="filtrar('Yamile')">Yamile (3)</button><button onclick="filtrar('Abastecedora')">Abastecedora (4)</button></div><div class="seccion-persona" data-persona="Mairelis"><h2 onclick="toggleAcordeon(this)">👤 Mairelis (2)</h2><div class="contenido-persona">
         <div class="card-wrapper">
           <div class="card card" data-id="M3VUcjJXM1R2SEE4cmtnbQ" data-completada="false">
             <div class="titulo">Quitar comprobante de la 696 que contabilizó Mairelis para cuadrar la entrada que se quedó del taller</div>
@@ -83,7 +83,49 @@
               <button class="btn-action btn-no" onclick="cancelarCompletar('Y3J6T3FHYWwxOTJqZHd0Qw')">Deshacer</button>
             </div>
           </div>
-        </div></div></div><div class="seccion-persona" data-persona="Melliza"><h2 onclick="toggleAcordeon(this)">👤 Melliza (2)</h2><div class="contenido-persona">
+        </div></div></div><div class="seccion-persona" data-persona="Melliza"><h2 onclick="toggleAcordeon(this)">👤 Melliza (5)</h2><div class="contenido-persona">
+        <div class="card-wrapper">
+          <div class="card card" data-id="VnZOTklmdlhWeEgwNnZzTw" data-completada="false">
+            <div class="titulo">⚠️💲 Pagar urgente</div>
+            <div class="fecha">📅 Vence: 10 Sep 2026</div>
+            <div class="notas">📌 sacar listado del vencimiento de las cuentas por pagar con cierre 30 de septiembre <br><br>📌 Para eso en el submayor tienen que ponerle esa fecha de vencimiento <br><br>📌 De allí escogen las que sean internas MININT y las pagan si alcanza el dinero priorizando Agropecuario<br><br>Abastecedora, Melliza</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-VnZOTklmdlhWeEgwNnZzTw">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('VnZOTklmdlhWeEgwNnZzTw')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('VnZOTklmdlhWeEgwNnZzTw')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card" data-id="RUtEOFotRXQ4UThKelREVw" data-completada="false">
+            <div class="titulo">⚠️ Listado de cuentas por cobrar vencidas de aseguramiento</div>
+            <div class="fecha">📅 Vence: 10 Sep 2026</div>
+            <div class="notas">📌 igualmente actualizar este listado si trabajas diariamente en la conciliación con los deudores <br><br>Melliza </div>
+          </div>
+          <div class="confirm-overlay" id="overlay-RUtEOFotRXQ4UThKelREVw">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('RUtEOFotRXQ4UThKelREVw')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('RUtEOFotRXQ4UThKelREVw')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card" data-id="TTVvRUpCYWtQTVdKSVVpZA" data-completada="false">
+            <div class="titulo">⚠️ Actualizar listado de las cuentas por cobrar que vencen al cierre 30 de septiembre.</div>
+            <div class="fecha">📅 Vence: 10 Sep 2026</div>
+            <div class="notas">📌 Enviarle a Molinet por WhatsApp conciliación con la relación de estas facturas. <br><br>Abastecedora, Melliza </div>
+          </div>
+          <div class="confirm-overlay" id="overlay-TTVvRUpCYWtQTVdKSVVpZA">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('TTVvRUpCYWtQTVdKSVVpZA')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('TTVvRUpCYWtQTVdKSVVpZA')">Deshacer</button>
+            </div>
+          </div>
+        </div>
         <div class="card-wrapper">
           <div class="card card" data-id="SWRRNkpxUFZSWnFMa1JrMw" data-completada="false">
             <div class="titulo">Ver lo de la factura 47 36 de alimentación de tres cajas de cerveza de tgf que no la reconocen por valor de 1800 pesos</div>
@@ -153,7 +195,35 @@
               <button class="btn-action btn-no" onclick="cancelarCompletar('anp1VkxCdHp0Z2ZXc1dVag')">Deshacer</button>
             </div>
           </div>
-        </div></div></div><div class="seccion-persona" data-persona="Abastecedora"><h2 onclick="toggleAcordeon(this)">👤 Abastecedora (2)</h2><div class="contenido-persona">
+        </div></div></div><div class="seccion-persona" data-persona="Abastecedora"><h2 onclick="toggleAcordeon(this)">👤 Abastecedora (4)</h2><div class="contenido-persona">
+        <div class="card-wrapper">
+          <div class="card card" data-id="VnZOTklmdlhWeEgwNnZzTw" data-completada="false">
+            <div class="titulo">⚠️💲 Pagar urgente</div>
+            <div class="fecha">📅 Vence: 10 Sep 2026</div>
+            <div class="notas">📌 sacar listado del vencimiento de las cuentas por pagar con cierre 30 de septiembre <br><br>📌 Para eso en el submayor tienen que ponerle esa fecha de vencimiento <br><br>📌 De allí escogen las que sean internas MININT y las pagan si alcanza el dinero priorizando Agropecuario<br><br>Abastecedora, Melliza</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-VnZOTklmdlhWeEgwNnZzTw">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('VnZOTklmdlhWeEgwNnZzTw')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('VnZOTklmdlhWeEgwNnZzTw')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card" data-id="TTVvRUpCYWtQTVdKSVVpZA" data-completada="false">
+            <div class="titulo">⚠️ Actualizar listado de las cuentas por cobrar que vencen al cierre 30 de septiembre.</div>
+            <div class="fecha">📅 Vence: 10 Sep 2026</div>
+            <div class="notas">📌 Enviarle a Molinet por WhatsApp conciliación con la relación de estas facturas. <br><br>Abastecedora, Melliza </div>
+          </div>
+          <div class="confirm-overlay" id="overlay-TTVvRUpCYWtQTVdKSVVpZA">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('TTVvRUpCYWtQTVdKSVVpZA')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('TTVvRUpCYWtQTVdKSVVpZA')">Deshacer</button>
+            </div>
+          </div>
+        </div>
         <div class="card-wrapper">
           <div class="card card" data-id="cDg0Z2loQVczbG9iQ0x0bg" data-completada="false">
             <div class="titulo">Ver si se le dió entrada a la factura de ciego de Ávila de vianda por 1 397 200.00</div>
@@ -182,7 +252,7 @@
             </div>
           </div>
         </div></div></div>
-  <div class="footer">🔄 Última actualización: 09 sept a las 13:38</div>
+  <div class="footer">🔄 Última actualización: 09 sept a las 13:39</div>
 
   <script>
     const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyPBrCQf5s8r9YisXc5wLMG7bLtyFph8Hg5Z2wPpv8vcScrkjmrsP7_8ej4gZuIUvg3UQ/exec';
