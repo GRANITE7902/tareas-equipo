@@ -55,7 +55,7 @@
   <div class="instruccion">👉 En móvil: desliza a la derecha. En PC: haz doble clic para marcar.</div>
   
   <div class="filtros">
-    <button onclick="filtrar('todos')" class="active">Ver Todos</button><button onclick="filtrar('Josefina')">Josefina (1)</button><button onclick="filtrar('Mairelis')">Mairelis (5)</button><button onclick="filtrar('Melliza')">Melliza (5)</button><button onclick="filtrar('Yamile')">Yamile (1)</button><button onclick="filtrar('Yamilka')">Yamilka (1)</button><button onclick="filtrar('Abastecedora')">Abastecedora (4)</button></div><div class="seccion-persona" data-persona="Josefina"><h2 onclick="toggleAcordeon(this)">👤 Josefina (1)</h2><div class="contenido-persona">
+    <button onclick="filtrar('todos')" class="active">Ver Todos</button><button onclick="filtrar('Josefina')">Josefina (1)</button><button onclick="filtrar('Mairelis')">Mairelis (6)</button><button onclick="filtrar('Melliza')">Melliza (4)</button><button onclick="filtrar('Yamile')">Yamile (1)</button><button onclick="filtrar('Yamilka')">Yamilka (1)</button><button onclick="filtrar('Abastecedora')">Abastecedora (4)</button></div><div class="seccion-persona" data-persona="Josefina"><h2 onclick="toggleAcordeon(this)">👤 Josefina (1)</h2><div class="contenido-persona">
         <div class="card-wrapper">
           <div class="card card" data-id="NktXWkRHcG1GeHJ3RGUtaQ" data-completada="false">
             <div class="titulo">Llevar nóminas de internos a Albaisa</div>
@@ -69,7 +69,21 @@
               <button class="btn-action btn-no" onclick="cancelarCompletar('NktXWkRHcG1GeHJ3RGUtaQ')">Deshacer</button>
             </div>
           </div>
-        </div></div></div><div class="seccion-persona" data-persona="Mairelis"><h2 onclick="toggleAcordeon(this)">👤 Mairelis (5)</h2><div class="contenido-persona">
+        </div></div></div><div class="seccion-persona" data-persona="Mairelis"><h2 onclick="toggleAcordeon(this)">👤 Mairelis (6)</h2><div class="contenido-persona">
+        <div class="card-wrapper">
+          <div class="card card" data-id="UHVBUmRzMXloeWNEeGhiNg" data-completada="false">
+            <div class="titulo">💲 Pagar factura UAC</div>
+            <div class="fecha">📅 Vence: 18 Sep 2026</div>
+            <div class="notas">📌 Esta es una factura de arreglo de impresora del segundo jefe provincial.<br><br>1️⃣ ver con director de la uac a ver si nos puede dar una copia porque a Duvia se le perdió la copia de ella.<br><br>2️⃣ Una vez que se tenga la copia entregársela a  Duvia para que el jefe o Su secretaria la certifique. <br><br>3️⃣ proceder al pago con la factura certificada. <br><br>4️⃣ contabilizar el gasto por la partida 16 de misceláneas al elemento 1610. <br><br>Mairelis </div>
+          </div>
+          <div class="confirm-overlay" id="overlay-UHVBUmRzMXloeWNEeGhiNg">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('UHVBUmRzMXloeWNEeGhiNg')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('UHVBUmRzMXloeWNEeGhiNg')">Deshacer</button>
+            </div>
+          </div>
+        </div>
         <div class="card-wrapper">
           <div class="card card" data-id="VV9qYjU5aWZzSG1KYnpoNQ" data-completada="false">
             <div class="titulo">💲 Pagar factura UAC</div>
@@ -139,7 +153,7 @@
               <button class="btn-action btn-no" onclick="cancelarCompletar('Y3J6T3FHYWwxOTJqZHd0Qw')">Deshacer</button>
             </div>
           </div>
-        </div></div></div><div class="seccion-persona" data-persona="Melliza"><h2 onclick="toggleAcordeon(this)">👤 Melliza (5)</h2><div class="contenido-persona">
+        </div></div></div><div class="seccion-persona" data-persona="Melliza"><h2 onclick="toggleAcordeon(this)">👤 Melliza (4)</h2><div class="contenido-persona">
         <div class="card-wrapper">
           <div class="card card" data-id="OVN1cUVXSWtQU2cxdVZlYw" data-completada="false">
             <div class="titulo">Facturas FINCIMEX pendientes de entrada</div>
@@ -165,20 +179,6 @@
             <div class="confirm-acciones">
               <button class="btn-action btn-si" onclick="ejecutarCompletar('bHFwbzYwR25TandKUEtqVw')">Sí, confirmar</button>
               <button class="btn-action btn-no" onclick="cancelarCompletar('bHFwbzYwR25TandKUEtqVw')">Deshacer</button>
-            </div>
-          </div>
-        </div>
-        <div class="card-wrapper">
-          <div class="card card completada" data-id="SWRRNkpxUFZSWnFMa1JrMw" data-completada="true">
-            <div class="titulo">Ver lo de la factura 47 36 de alimentación de tres cajas de cerveza de tgf que no la reconocen por valor de 1800 pesos <span class="badge-revisar">PENDIENTE CONFIRMAR</span></div>
-            <div class="fecha">📅 Vence: 16 Sep 2026</div>
-            <div class="notas">📌. Llama a Dailenis a ver si por fin los logísticos conciliaron con el almacén y con Idelmis a ver si procede cancelar la factura de lo contrario que tgf la pague. <br><br>Melliza </div>
-          </div>
-          <div class="confirm-overlay" id="overlay-SWRRNkpxUFZSWnFMa1JrMw">
-            <span class="confirm-texto">¿Marcar como completada?</span>
-            <div class="confirm-acciones">
-              <button class="btn-action btn-si" onclick="ejecutarCompletar('SWRRNkpxUFZSWnFMa1JrMw')">Sí, confirmar</button>
-              <button class="btn-action btn-no" onclick="cancelarCompletar('SWRRNkpxUFZSWnFMa1JrMw')">Deshacer</button>
             </div>
           </div>
         </div>
@@ -294,7 +294,7 @@
             </div>
           </div>
         </div></div></div>
-  <div class="footer">🔄 Última actualización: 17 sept a las 21:47</div>
+  <div class="footer">🔄 Última actualización: 17 sept a las 21:48</div>
 
   <script>
     const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyPBrCQf5s8r9YisXc5wLMG7bLtyFph8Hg5Z2wPpv8vcScrkjmrsP7_8ej4gZuIUvg3UQ/exec';
