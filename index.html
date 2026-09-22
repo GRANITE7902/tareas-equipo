@@ -57,9 +57,9 @@
   <div class="filtros">
     <button onclick="filtrar('todos')" class="active">Ver Todos</button><button onclick="filtrar('Josefina')">Josefina (1)</button><button onclick="filtrar('Mairelis')">Mairelis (5)</button><button onclick="filtrar('Melliza')">Melliza (3)</button><button onclick="filtrar('Yamile')">Yamile (1)</button><button onclick="filtrar('Abastecedora')">Abastecedora (5)</button></div><div class="seccion-persona" data-persona="Josefina"><h2 onclick="toggleAcordeon(this)">👤 Josefina (1)</h2><div class="contenido-persona">
         <div class="card-wrapper">
-          <div class="card card" data-id="NktXWkRHcG1GeHJ3RGUtaQ" data-completada="false">
+          <div class="card card hoy" data-id="NktXWkRHcG1GeHJ3RGUtaQ" data-completada="false">
             <div class="titulo">Llevar nóminas de internos a Albaisa</div>
-            <div class="fecha">📅 Vence: 22 Sep 2026</div>
+            <div class="fecha">📅 Vence: 22 Sep 2026 <span class="badge-hoy">¡HOY!</span></div>
             <div class="notas">📌 Esto se va a ejecutar cuando el jefe autorice el transporte<br><br>Josefina </div>
           </div>
           <div class="confirm-overlay" id="overlay-NktXWkRHcG1GeHJ3RGUtaQ">
@@ -99,9 +99,9 @@
           </div>
         </div>
         <div class="card-wrapper">
-          <div class="card card" data-id="QlpFVmNfek1RWHhXNHBReA" data-completada="false">
+          <div class="card card hoy" data-id="QlpFVmNfek1RWHhXNHBReA" data-completada="false">
             <div class="titulo">🛑  Reclamación a la UAC</div>
-            <div class="fecha">📅 Vence: 22 Sep 2026</div>
+            <div class="fecha">📅 Vence: 22 Sep 2026 <span class="badge-hoy">¡HOY!</span></div>
             <div class="notas">Qué dicen los compañeros de la UAC de la reclamación del pago de servicio protección y teléfono 224 mil 109.85<br><br>Mairelis </div>
           </div>
           <div class="confirm-overlay" id="overlay-QlpFVmNfek1RWHhXNHBReA">
@@ -113,9 +113,9 @@
           </div>
         </div>
         <div class="card-wrapper">
-          <div class="card card" data-id="dTFaMFVaeTViZ0dmWGY5MQ" data-completada="false">
+          <div class="card card hoy" data-id="dTFaMFVaeTViZ0dmWGY5MQ" data-completada="false">
             <div class="titulo">⚠️</div>
-            <div class="fecha">📅 Vence: 22 Sep 2026</div>
+            <div class="fecha">📅 Vence: 22 Sep 2026 <span class="badge-hoy">¡HOY!</span></div>
             <div class="notas">Ver si se imprimió el informe de recepción de armamento del pago que se le hizo a finales de agosto. <br><br>📌 el informe de la sección debe estar junto a la factura. <br><br>Mairelis </div>
           </div>
           <div class="confirm-overlay" id="overlay-dTFaMFVaeTViZ0dmWGY5MQ">
@@ -211,9 +211,9 @@
           </div>
         </div>
         <div class="card-wrapper">
-          <div class="card card hoy" data-id="Sk5rVG5HMGRoTDJ4UGNPNw" data-completada="false">
+          <div class="card card vencida" data-id="Sk5rVG5HMGRoTDJ4UGNPNw" data-completada="false">
             <div class="titulo">La factura de actividad de la pesca por un importe de  9.488.08 pesos no tiene informes de recepción impreso</div>
-            <div class="fecha">📅 Vence: 21 Sep 2026 <span class="badge-hoy">¡HOY!</span></div>
+            <div class="fecha">📅 Vence: 21 Sep 2026</div>
             <div class="notas">📌 verificar si ya esto está <br><br>Abastecedora </div>
           </div>
           <div class="confirm-overlay" id="overlay-Sk5rVG5HMGRoTDJ4UGNPNw">
@@ -225,9 +225,9 @@
           </div>
         </div>
         <div class="card-wrapper">
-          <div class="card card hoy" data-id="WGxWMEk3NXpUNVVSZlRQZw" data-completada="false">
+          <div class="card card vencida" data-id="WGxWMEk3NXpUNVVSZlRQZw" data-completada="false">
             <div class="titulo">Enviar conciliación a Dailenis y relación del pago donde faltaron los $1000</div>
-            <div class="fecha">📅 Vence: 21 Sep 2026 <span class="badge-hoy">¡HOY!</span></div>
+            <div class="fecha">📅 Vence: 21 Sep 2026</div>
             <div class="notas">Abastecedora</div>
           </div>
           <div class="confirm-overlay" id="overlay-WGxWMEk3NXpUNVVSZlRQZw">
@@ -241,7 +241,7 @@
         <div class="card-wrapper">
           <div class="card card completada" data-id="bkxHYUFhRWhzdXdKdzZ3Zg" data-completada="true">
             <div class="titulo">⚠️ 334  de TGF <span class="badge-revisar">PENDIENTE CONFIRMAR</span></div>
-            <div class="fecha">📅 Vence: 22 Sep 2026</div>
+            <div class="fecha">📅 Vence: 22 Sep 2026 <span class="badge-hoy">¡HOY!</span></div>
             <div class="notas">1001.01 en reclamación <br><br>📌 Conciliar con Dailenis para liquidar los antes posible. <br><br>Abastecedora <br></div>
           </div>
           <div class="confirm-overlay" id="overlay-bkxHYUFhRWhzdXdKdzZ3Zg">
@@ -266,7 +266,7 @@
             </div>
           </div>
         </div></div></div>
-  <div class="footer">🔄 Última actualización: 21 sept a las 23:59</div>
+  <div class="footer">🔄 Última actualización: 22 sept a las 00:00</div>
 
   <script>
     const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyPBrCQf5s8r9YisXc5wLMG7bLtyFph8Hg5Z2wPpv8vcScrkjmrsP7_8ej4gZuIUvg3UQ/exec';
