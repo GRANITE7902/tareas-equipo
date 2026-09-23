@@ -55,7 +55,7 @@
   <div class="instruccion">👉 En móvil: desliza a la derecha. En PC: haz doble clic para marcar.</div>
   
   <div class="filtros">
-    <button onclick="filtrar('todos')" class="active">Ver Todos</button><button onclick="filtrar('Josefina')">Josefina (1)</button><button onclick="filtrar('Mairelis')">Mairelis (5)</button><button onclick="filtrar('Melliza')">Melliza (3)</button><button onclick="filtrar('Yamile')">Yamile (1)</button><button onclick="filtrar('Yamilka')">Yamilka (1)</button><button onclick="filtrar('Abastecedora')">Abastecedora (1)</button></div><div class="seccion-persona" data-persona="Josefina"><h2 onclick="toggleAcordeon(this)">👤 Josefina (1)</h2><div class="contenido-persona">
+    <button onclick="filtrar('todos')" class="active">Ver Todos</button><button onclick="filtrar('Josefina')">Josefina (1)</button><button onclick="filtrar('Mairelis')">Mairelis (5)</button><button onclick="filtrar('Melliza')">Melliza (5)</button><button onclick="filtrar('Yamile')">Yamile (2)</button><button onclick="filtrar('Yamilka')">Yamilka (1)</button><button onclick="filtrar('Abastecedora')">Abastecedora (3)</button></div><div class="seccion-persona" data-persona="Josefina"><h2 onclick="toggleAcordeon(this)">👤 Josefina (1)</h2><div class="contenido-persona">
         <div class="card-wrapper">
           <div class="card card vencida" data-id="NktXWkRHcG1GeHJ3RGUtaQ" data-completada="false">
             <div class="titulo">Llevar nóminas de internos a Albaisa</div>
@@ -139,7 +139,35 @@
               <button class="btn-action btn-no" onclick="cancelarCompletar('Y3J6T3FHYWwxOTJqZHd0Qw')">Deshacer</button>
             </div>
           </div>
-        </div></div></div><div class="seccion-persona" data-persona="Melliza"><h2 onclick="toggleAcordeon(this)">👤 Melliza (3)</h2><div class="contenido-persona">
+        </div></div></div><div class="seccion-persona" data-persona="Melliza"><h2 onclick="toggleAcordeon(this)">👤 Melliza (5)</h2><div class="contenido-persona">
+        <div class="card-wrapper">
+          <div class="card card hoy" data-id="Rkk1SnllRFVLd01TRFcxSw" data-completada="false">
+            <div class="titulo">Pagarle a la empresa de alojamiento, ver si tiene contrato</div>
+            <div class="fecha">📅 Vence: 23 Sep 2026 <span class="badge-hoy">¡HOY!</span></div>
+            <div class="notas">📝 ver esto con Idelmis si  ya le dio entrada. <br><br>Verificar que tenga contrato y proceder a pagar. <br><br>Abastecedora, Melliza</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-Rkk1SnllRFVLd01TRFcxSw">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('Rkk1SnllRFVLd01TRFcxSw')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('Rkk1SnllRFVLd01TRFcxSw')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card hoy" data-id="d2VuQTRNNVBqek9DcHJmVQ" data-completada="false">
+            <div class="titulo">Ver si están asentadas las chequeras nuevas en el registro de control de cheques</div>
+            <div class="fecha">📅 Vence: 23 Sep 2026 <span class="badge-hoy">¡HOY!</span></div>
+            <div class="notas">Abastecedora, Melliza <br><br></div>
+          </div>
+          <div class="confirm-overlay" id="overlay-d2VuQTRNNVBqek9DcHJmVQ">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('d2VuQTRNNVBqek9DcHJmVQ')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('d2VuQTRNNVBqek9DcHJmVQ')">Deshacer</button>
+            </div>
+          </div>
+        </div>
         <div class="card-wrapper">
           <div class="card card hoy" data-id="OVN1cUVXSWtQU2cxdVZlYw" data-completada="false">
             <div class="titulo">Facturas FINCIMEX pendientes de entrada</div>
@@ -181,7 +209,21 @@
               <button class="btn-action btn-no" onclick="cancelarCompletar('cWVJMm9CdERCV1JKWk1LRA')">Deshacer</button>
             </div>
           </div>
-        </div></div></div><div class="seccion-persona" data-persona="Yamile"><h2 onclick="toggleAcordeon(this)">👤 Yamile (1)</h2><div class="contenido-persona">
+        </div></div></div><div class="seccion-persona" data-persona="Yamile"><h2 onclick="toggleAcordeon(this)">👤 Yamile (2)</h2><div class="contenido-persona">
+        <div class="card-wrapper">
+          <div class="card card hoy" data-id="YncyTWdTQk42U3JYZGo3QQ" data-completada="false">
+            <div class="titulo">Facturas de casa de visita en el archivador negro</div>
+            <div class="fecha">📅 Vence: 23 Sep 2026 <span class="badge-hoy">¡HOY!</span></div>
+            <div class="notas">Yamilet </div>
+          </div>
+          <div class="confirm-overlay" id="overlay-YncyTWdTQk42U3JYZGo3QQ">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('YncyTWdTQk42U3JYZGo3QQ')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('YncyTWdTQk42U3JYZGo3QQ')">Deshacer</button>
+            </div>
+          </div>
+        </div>
         <div class="card-wrapper">
           <div class="card card vencida" data-id="anp1VkxCdHp0Z2ZXc1dVag" data-completada="false">
             <div class="titulo">Factura de mantenimiento U81-2600383 por 1622.28 del municipio Esmeralda se pagó pendiente que entreguen la factura pago realizado por cheque</div>
@@ -209,7 +251,35 @@
               <button class="btn-action btn-no" onclick="cancelarCompletar('b2FpY190S3FROFQyWlhuUg')">Deshacer</button>
             </div>
           </div>
-        </div></div></div><div class="seccion-persona" data-persona="Abastecedora"><h2 onclick="toggleAcordeon(this)">👤 Abastecedora (1)</h2><div class="contenido-persona">
+        </div></div></div><div class="seccion-persona" data-persona="Abastecedora"><h2 onclick="toggleAcordeon(this)">👤 Abastecedora (3)</h2><div class="contenido-persona">
+        <div class="card-wrapper">
+          <div class="card card hoy" data-id="Rkk1SnllRFVLd01TRFcxSw" data-completada="false">
+            <div class="titulo">Pagarle a la empresa de alojamiento, ver si tiene contrato</div>
+            <div class="fecha">📅 Vence: 23 Sep 2026 <span class="badge-hoy">¡HOY!</span></div>
+            <div class="notas">📝 ver esto con Idelmis si  ya le dio entrada. <br><br>Verificar que tenga contrato y proceder a pagar. <br><br>Abastecedora, Melliza</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-Rkk1SnllRFVLd01TRFcxSw">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('Rkk1SnllRFVLd01TRFcxSw')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('Rkk1SnllRFVLd01TRFcxSw')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card hoy" data-id="d2VuQTRNNVBqek9DcHJmVQ" data-completada="false">
+            <div class="titulo">Ver si están asentadas las chequeras nuevas en el registro de control de cheques</div>
+            <div class="fecha">📅 Vence: 23 Sep 2026 <span class="badge-hoy">¡HOY!</span></div>
+            <div class="notas">Abastecedora, Melliza <br><br></div>
+          </div>
+          <div class="confirm-overlay" id="overlay-d2VuQTRNNVBqek9DcHJmVQ">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('d2VuQTRNNVBqek9DcHJmVQ')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('d2VuQTRNNVBqek9DcHJmVQ')">Deshacer</button>
+            </div>
+          </div>
+        </div>
         <div class="card-wrapper">
           <div class="card card vencida" data-id="Sk5rVG5HMGRoTDJ4UGNPNw" data-completada="false">
             <div class="titulo">La factura de actividad de la pesca por un importe de  9.488.08 pesos no tiene informes de recepción impreso</div>
@@ -224,7 +294,7 @@
             </div>
           </div>
         </div></div></div>
-  <div class="footer">🔄 Última actualización: 23 sept a las 06:13</div>
+  <div class="footer">🔄 Última actualización: 23 sept a las 06:14</div>
 
   <script>
     const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyPBrCQf5s8r9YisXc5wLMG7bLtyFph8Hg5Z2wPpv8vcScrkjmrsP7_8ej4gZuIUvg3UQ/exec';
