@@ -141,8 +141,8 @@
           </div>
         </div></div></div><div class="seccion-persona" data-persona="Melliza"><h2 onclick="toggleAcordeon(this)">👤 Melliza (3)</h2><div class="contenido-persona">
         <div class="card-wrapper">
-          <div class="card card vencida" data-id="Rkk1SnllRFVLd01TRFcxSw" data-completada="false">
-            <div class="titulo">Pagarle a la empresa de alojamiento, ver si tiene contrato</div>
+          <div class="card card completada" data-id="Rkk1SnllRFVLd01TRFcxSw" data-completada="true">
+            <div class="titulo">Pagarle a la empresa de alojamiento, ver si tiene contrato <span class="badge-revisar">PENDIENTE CONFIRMAR</span></div>
             <div class="fecha">📅 Vence: 23 Sep 2026</div>
             <div class="notas">📝 ver esto con Idelmis si  ya le dio entrada. <br><br>Verificar que tenga contrato y proceder a pagar. <br><br>Abastecedora, Melliza</div>
           </div>
@@ -211,6 +211,20 @@
           </div>
         </div></div></div><div class="seccion-persona" data-persona="Abastecedora"><h2 onclick="toggleAcordeon(this)">👤 Abastecedora (2)</h2><div class="contenido-persona">
         <div class="card-wrapper">
+          <div class="card card completada" data-id="Rkk1SnllRFVLd01TRFcxSw" data-completada="true">
+            <div class="titulo">Pagarle a la empresa de alojamiento, ver si tiene contrato <span class="badge-revisar">PENDIENTE CONFIRMAR</span></div>
+            <div class="fecha">📅 Vence: 23 Sep 2026</div>
+            <div class="notas">📝 ver esto con Idelmis si  ya le dio entrada. <br><br>Verificar que tenga contrato y proceder a pagar. <br><br>Abastecedora, Melliza</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-Rkk1SnllRFVLd01TRFcxSw">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('Rkk1SnllRFVLd01TRFcxSw')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('Rkk1SnllRFVLd01TRFcxSw')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
           <div class="card card" data-id="d1VINDJzdDl0cEhBVmtudA" data-completada="false">
             <div class="titulo">Hacer revisión para verificar que todos los informes de recepción estén debidamente firmados y incluyendo los tiros  directos</div>
             <div class="fecha">📅 Vence: 29 Sep 2026</div>
@@ -223,22 +237,8 @@
               <button class="btn-action btn-no" onclick="cancelarCompletar('d1VINDJzdDl0cEhBVmtudA')">Deshacer</button>
             </div>
           </div>
-        </div>
-        <div class="card-wrapper">
-          <div class="card card vencida" data-id="Rkk1SnllRFVLd01TRFcxSw" data-completada="false">
-            <div class="titulo">Pagarle a la empresa de alojamiento, ver si tiene contrato</div>
-            <div class="fecha">📅 Vence: 23 Sep 2026</div>
-            <div class="notas">📝 ver esto con Idelmis si  ya le dio entrada. <br><br>Verificar que tenga contrato y proceder a pagar. <br><br>Abastecedora, Melliza</div>
-          </div>
-          <div class="confirm-overlay" id="overlay-Rkk1SnllRFVLd01TRFcxSw">
-            <span class="confirm-texto">¿Marcar como completada?</span>
-            <div class="confirm-acciones">
-              <button class="btn-action btn-si" onclick="ejecutarCompletar('Rkk1SnllRFVLd01TRFcxSw')">Sí, confirmar</button>
-              <button class="btn-action btn-no" onclick="cancelarCompletar('Rkk1SnllRFVLd01TRFcxSw')">Deshacer</button>
-            </div>
-          </div>
         </div></div></div>
-  <div class="footer">🔄 Última actualización: 24 sept a las 14:05</div>
+  <div class="footer">🔄 Última actualización: 24 sept a las 14:06</div>
 
   <script>
     const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyPBrCQf5s8r9YisXc5wLMG7bLtyFph8Hg5Z2wPpv8vcScrkjmrsP7_8ej4gZuIUvg3UQ/exec';
