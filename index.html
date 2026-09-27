@@ -197,6 +197,20 @@
           </div>
         </div></div></div><div class="seccion-persona" data-persona="Abastecedora"><h2 onclick="toggleAcordeon(this)">👤 Abastecedora (3)</h2><div class="contenido-persona">
         <div class="card-wrapper">
+          <div class="card card completada" data-id="QmNHZlZOdnpCTDJwZ2ZRZA" data-completada="true">
+            <div class="titulo">Traslado de Clientes <span class="badge-revisar">PENDIENTE CONFIRMAR</span></div>
+            <div class="fecha">📅 Vence: 25 Sep 2026</div>
+            <div class="notas">📌 trasladar la factura de las computadoras del cliente servicio médico para prisiones. <br><br>Abastecedora </div>
+          </div>
+          <div class="confirm-overlay" id="overlay-QmNHZlZOdnpCTDJwZ2ZRZA">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('QmNHZlZOdnpCTDJwZ2ZRZA')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('QmNHZlZOdnpCTDJwZ2ZRZA')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
           <div class="card card vencida" data-id="OGxRSWo2alo1aXNDdTJzRA" data-completada="false">
             <div class="titulo">Ver si Ruta Invasora tiene contrato</div>
             <div class="fecha">📅 Vence: 25 Sep 2026</div>
@@ -207,20 +221,6 @@
             <div class="confirm-acciones">
               <button class="btn-action btn-si" onclick="ejecutarCompletar('OGxRSWo2alo1aXNDdTJzRA')">Sí, confirmar</button>
               <button class="btn-action btn-no" onclick="cancelarCompletar('OGxRSWo2alo1aXNDdTJzRA')">Deshacer</button>
-            </div>
-          </div>
-        </div>
-        <div class="card-wrapper">
-          <div class="card card vencida" data-id="QmNHZlZOdnpCTDJwZ2ZRZA" data-completada="false">
-            <div class="titulo">Traslado de Clientes</div>
-            <div class="fecha">📅 Vence: 25 Sep 2026</div>
-            <div class="notas">📌 trasladar la factura de las computadoras del cliente servicio médico para prisiones. <br><br>Abastecedora </div>
-          </div>
-          <div class="confirm-overlay" id="overlay-QmNHZlZOdnpCTDJwZ2ZRZA">
-            <span class="confirm-texto">¿Marcar como completada?</span>
-            <div class="confirm-acciones">
-              <button class="btn-action btn-si" onclick="ejecutarCompletar('QmNHZlZOdnpCTDJwZ2ZRZA')">Sí, confirmar</button>
-              <button class="btn-action btn-no" onclick="cancelarCompletar('QmNHZlZOdnpCTDJwZ2ZRZA')">Deshacer</button>
             </div>
           </div>
         </div>
@@ -238,7 +238,7 @@
             </div>
           </div>
         </div></div></div>
-  <div class="footer">🔄 Última actualización: 27 sept a las 13:03</div>
+  <div class="footer">🔄 Última actualización: 27 sept a las 13:04</div>
 
   <script>
     const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyPBrCQf5s8r9YisXc5wLMG7bLtyFph8Hg5Z2wPpv8vcScrkjmrsP7_8ej4gZuIUvg3UQ/exec';
