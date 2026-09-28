@@ -55,7 +55,21 @@
   <div class="instruccion">👉 En móvil: desliza a la derecha. En PC: haz doble clic para marcar.</div>
   
   <div class="filtros">
-    <button onclick="filtrar('todos')" class="active">Ver Todos</button><button onclick="filtrar('Iraida')">Iraida (1)</button><button onclick="filtrar('Mairelis')">Mairelis (4)</button><button onclick="filtrar('Melliza')">Melliza (2)</button><button onclick="filtrar('Yamile')">Yamile (2)</button><button onclick="filtrar('Yamilka')">Yamilka (1)</button><button onclick="filtrar('Abastecedora')">Abastecedora (3)</button></div><div class="seccion-persona" data-persona="Iraida"><h2 onclick="toggleAcordeon(this)">👤 Iraida (1)</h2><div class="contenido-persona">
+    <button onclick="filtrar('todos')" class="active">Ver Todos</button><button onclick="filtrar('Iraida')">Iraida (2)</button><button onclick="filtrar('Mairelis')">Mairelis (4)</button><button onclick="filtrar('Melliza')">Melliza (2)</button><button onclick="filtrar('Yamile')">Yamile (2)</button><button onclick="filtrar('Yamilka')">Yamilka (1)</button><button onclick="filtrar('Abastecedora')">Abastecedora (3)</button></div><div class="seccion-persona" data-persona="Iraida"><h2 onclick="toggleAcordeon(this)">👤 Iraida (2)</h2><div class="contenido-persona">
+        <div class="card-wrapper">
+          <div class="card card" data-id="M1AzV0xmZVdtM2M1TlFtTQ" data-completada="false">
+            <div class="titulo">⚠️ Inventario 100 casino</div>
+            <div class="fecha">📅 Vence: 07 Oct 2026</div>
+            <div class="notas">📌 Me ven para pasarles la aplicación y explicarles <br>📌Lo van a realizar Iraida y el compañero nuevo <br><br>Iraida</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-M1AzV0xmZVdtM2M1TlFtTQ">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('M1AzV0xmZVdtM2M1TlFtTQ')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('M1AzV0xmZVdtM2M1TlFtTQ')">Deshacer</button>
+            </div>
+          </div>
+        </div>
         <div class="card-wrapper">
           <div class="card card" data-id="d1VINDJzdDl0cEhBVmtudA" data-completada="false">
             <div class="titulo">Hacer revisión para verificar que todos los informes de recepción estén debidamente firmados y incluyendo los tiros  directos</div>
@@ -238,7 +252,7 @@
             </div>
           </div>
         </div></div></div>
-  <div class="footer">🔄 Última actualización: 27 sept a las 22:34</div>
+  <div class="footer">🔄 Última actualización: 27 sept a las 22:35</div>
 
   <script>
     const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyPBrCQf5s8r9YisXc5wLMG7bLtyFph8Hg5Z2wPpv8vcScrkjmrsP7_8ej4gZuIUvg3UQ/exec';
