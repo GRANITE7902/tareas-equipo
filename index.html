@@ -141,6 +141,20 @@
           </div>
         </div></div></div><div class="seccion-persona" data-persona="Yamile"><h2 onclick="toggleAcordeon(this)">👤 Yamile (4)</h2><div class="contenido-persona">
         <div class="card-wrapper">
+          <div class="card card completada" data-id="SHFDSk1Jd0IwdmM0VFJReA" data-completada="true">
+            <div class="titulo">Certifico de la factura. De Cayo Cruz <span class="badge-revisar">PENDIENTE CONFIRMAR</span></div>
+            <div class="fecha">📅 Vence: 05 Oct 2026</div>
+            <div class="notas">Yamilé</div>
+          </div>
+          <div class="confirm-overlay" id="overlay-SHFDSk1Jd0IwdmM0VFJReA">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('SHFDSk1Jd0IwdmM0VFJReA')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('SHFDSk1Jd0IwdmM0VFJReA')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
           <div class="card card hoy" data-id="bVIwSFhNcWpIOFowQmFUdw" data-completada="false">
             <div class="titulo">🛑Seguimiento tp 82 que está en el correo</div>
             <div class="fecha">📅 Vence: 12 Oct 2026 <span class="badge-hoy">¡HOY!</span></div>
@@ -151,20 +165,6 @@
             <div class="confirm-acciones">
               <button class="btn-action btn-si" onclick="ejecutarCompletar('bVIwSFhNcWpIOFowQmFUdw')">Sí, confirmar</button>
               <button class="btn-action btn-no" onclick="cancelarCompletar('bVIwSFhNcWpIOFowQmFUdw')">Deshacer</button>
-            </div>
-          </div>
-        </div>
-        <div class="card-wrapper">
-          <div class="card card vencida" data-id="SHFDSk1Jd0IwdmM0VFJReA" data-completada="false">
-            <div class="titulo">Certifico de la factura. De Cayo Cruz</div>
-            <div class="fecha">📅 Vence: 05 Oct 2026</div>
-            <div class="notas">Yamilé</div>
-          </div>
-          <div class="confirm-overlay" id="overlay-SHFDSk1Jd0IwdmM0VFJReA">
-            <span class="confirm-texto">¿Marcar como completada?</span>
-            <div class="confirm-acciones">
-              <button class="btn-action btn-si" onclick="ejecutarCompletar('SHFDSk1Jd0IwdmM0VFJReA')">Sí, confirmar</button>
-              <button class="btn-action btn-no" onclick="cancelarCompletar('SHFDSk1Jd0IwdmM0VFJReA')">Deshacer</button>
             </div>
           </div>
         </div>
@@ -280,7 +280,7 @@
             </div>
           </div>
         </div></div></div>
-  <div class="footer">🔄 Última actualización: 12 oct a las 07:26</div>
+  <div class="footer">🔄 Última actualización: 12 oct a las 07:27</div>
 
   <script>
     const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyPBrCQf5s8r9YisXc5wLMG7bLtyFph8Hg5Z2wPpv8vcScrkjmrsP7_8ej4gZuIUvg3UQ/exec';
