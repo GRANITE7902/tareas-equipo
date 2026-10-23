@@ -225,8 +225,22 @@
           </div>
         </div></div></div><div class="seccion-persona" data-persona="Abastecedora"><h2 onclick="toggleAcordeon(this)">👤 Abastecedora (4)</h2><div class="contenido-persona">
         <div class="card-wrapper">
-          <div class="card card hoy" data-id="ZkpleHhDYjA3bWNtSmx3MQ" data-completada="false">
-            <div class="titulo">⚠️Pendiente a recepción</div>
+          <div class="card card completada" data-id="NUZFLWE5Z3lVRUFwREowcg" data-completada="true">
+            <div class="titulo">⚠️ Factura de Santiago que falta. <span class="badge-revisar">PENDIENTE CONFIRMAR</span></div>
+            <div class="fecha">📅 Vence: 19 Oct 2026</div>
+            <div class="notas">📌 Seguimiento para poder pagarles a los santiagueros. <br><br>Abastecedora </div>
+          </div>
+          <div class="confirm-overlay" id="overlay-NUZFLWE5Z3lVRUFwREowcg">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('NUZFLWE5Z3lVRUFwREowcg')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('NUZFLWE5Z3lVRUFwREowcg')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card completada" data-id="ZkpleHhDYjA3bWNtSmx3MQ" data-completada="true">
+            <div class="titulo">⚠️Pendiente a recepción <span class="badge-revisar">PENDIENTE CONFIRMAR</span></div>
             <div class="fecha">📅 Vence: 23 Oct 2026 <span class="badge-hoy">¡HOY!</span></div>
             <div class="notas">  📌Factura por un importe de 81.200 pesos firmada por Orlando Pérez milanes<br><br>📌Factura pendiente recepción por 123 mil 830 pesos firma por Argote. <br><br>Abastecedora </div>
           </div>
@@ -253,20 +267,6 @@
           </div>
         </div>
         <div class="card-wrapper">
-          <div class="card card vencida" data-id="NUZFLWE5Z3lVRUFwREowcg" data-completada="false">
-            <div class="titulo">⚠️ Factura de Santiago que falta.</div>
-            <div class="fecha">📅 Vence: 19 Oct 2026</div>
-            <div class="notas">📌 Seguimiento para poder pagarles a los santiagueros. <br><br>Abastecedora </div>
-          </div>
-          <div class="confirm-overlay" id="overlay-NUZFLWE5Z3lVRUFwREowcg">
-            <span class="confirm-texto">¿Marcar como completada?</span>
-            <div class="confirm-acciones">
-              <button class="btn-action btn-si" onclick="ejecutarCompletar('NUZFLWE5Z3lVRUFwREowcg')">Sí, confirmar</button>
-              <button class="btn-action btn-no" onclick="cancelarCompletar('NUZFLWE5Z3lVRUFwREowcg')">Deshacer</button>
-            </div>
-          </div>
-        </div>
-        <div class="card-wrapper">
           <div class="card card" data-id="SmM2LTNEbVV4dmZyT1ZmOQ" data-completada="false">
             <div class="titulo">🛑Trabajar en los vencimientos.</div>
             <div class="fecha">📅 Vence: 29 Oct 2026</div>
@@ -280,7 +280,7 @@
             </div>
           </div>
         </div></div></div>
-  <div class="footer">🔄 Última actualización: 23 oct a las 17:19</div>
+  <div class="footer">🔄 Última actualización: 23 oct a las 17:20</div>
 
   <script>
     const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyPBrCQf5s8r9YisXc5wLMG7bLtyFph8Hg5Z2wPpv8vcScrkjmrsP7_8ej4gZuIUvg3UQ/exec';
