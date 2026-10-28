@@ -55,7 +55,7 @@
   <div class="instruccion">👉 En móvil: desliza a la derecha. En PC: haz doble clic para marcar.</div>
   
   <div class="filtros">
-    <button onclick="filtrar('todos')" class="active">Ver Todos</button><button onclick="filtrar('Iraida')">Iraida (2)</button><button onclick="filtrar('Mairelis')">Mairelis (3)</button><button onclick="filtrar('Maite')">Maite (1)</button><button onclick="filtrar('Martica')">Martica (1)</button><button onclick="filtrar('Melliza')">Melliza (3)</button><button onclick="filtrar('Yamile')">Yamile (3)</button><button onclick="filtrar('Abastecedora')">Abastecedora (1)</button></div><div class="seccion-persona" data-persona="Iraida"><h2 onclick="toggleAcordeon(this)">👤 Iraida (2)</h2><div class="contenido-persona">
+    <button onclick="filtrar('todos')" class="active">Ver Todos</button><button onclick="filtrar('Iraida')">Iraida (2)</button><button onclick="filtrar('Mairelis')">Mairelis (3)</button><button onclick="filtrar('Maite')">Maite (1)</button><button onclick="filtrar('Martica')">Martica (1)</button><button onclick="filtrar('Melliza')">Melliza (3)</button><button onclick="filtrar('Yamile')">Yamile (3)</button><button onclick="filtrar('Abastecedora')">Abastecedora (3)</button></div><div class="seccion-persona" data-persona="Iraida"><h2 onclick="toggleAcordeon(this)">👤 Iraida (2)</h2><div class="contenido-persona">
         <div class="card-wrapper">
           <div class="card card vencida" data-id="TlZkYTEwTldQWHhiRTZIbA" data-completada="false">
             <div class="titulo">🛑Pagar facturas refacturación UAC y Taller</div>
@@ -237,7 +237,35 @@
               <button class="btn-action btn-no" onclick="cancelarCompletar('SXFMY2tLV3VvdjJyYzJfRQ')">Deshacer</button>
             </div>
           </div>
-        </div></div></div><div class="seccion-persona" data-persona="Abastecedora"><h2 onclick="toggleAcordeon(this)">👤 Abastecedora (1)</h2><div class="contenido-persona">
+        </div></div></div><div class="seccion-persona" data-persona="Abastecedora"><h2 onclick="toggleAcordeon(this)">👤 Abastecedora (3)</h2><div class="contenido-persona">
+        <div class="card-wrapper">
+          <div class="card card" data-id="TXgyanlMSjBTcldUMGh0OQ" data-completada="false">
+            <div class="titulo">⚠️ 🛑, Tener en cuenta lo pendiente a recepción para no pagarlo doble</div>
+            <div class="fecha">📅 Vence: 28 Oct 2026</div>
+            <div class="notas">📌 cuando se le da entrada hay que cancelar la 450 y la 189 099 pendientes a recepción<br><br>📌 revisar que al menos una de agropecuario creo que ya entró. <br><br>Abastecedora </div>
+          </div>
+          <div class="confirm-overlay" id="overlay-TXgyanlMSjBTcldUMGh0OQ">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('TXgyanlMSjBTcldUMGh0OQ')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('TXgyanlMSjBTcldUMGh0OQ')">Deshacer</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card card" data-id="V3lTazIyVm5WeV8zbGpLYQ" data-completada="false">
+            <div class="titulo">⚠️Pagar lo de Miscelánea pendiente a recepción</div>
+            <div class="fecha">📅 Vence: 31 Oct 2026</div>
+            <div class="notas">📌 Te pasé las dos facturas por WhatsApp..<br><br>📌 Darle seguimiento con Olguita para que la recepcionen. <br><br>📌 Una vez recepcionada cancelarla 405 y la 189099<br><br>Abastecedora </div>
+          </div>
+          <div class="confirm-overlay" id="overlay-V3lTazIyVm5WeV8zbGpLYQ">
+            <span class="confirm-texto">¿Marcar como completada?</span>
+            <div class="confirm-acciones">
+              <button class="btn-action btn-si" onclick="ejecutarCompletar('V3lTazIyVm5WeV8zbGpLYQ')">Sí, confirmar</button>
+              <button class="btn-action btn-no" onclick="cancelarCompletar('V3lTazIyVm5WeV8zbGpLYQ')">Deshacer</button>
+            </div>
+          </div>
+        </div>
         <div class="card-wrapper">
           <div class="card card" data-id="SmM2LTNEbVV4dmZyT1ZmOQ" data-completada="false">
             <div class="titulo">🛑Trabajar en los vencimientos.</div>
@@ -252,7 +280,7 @@
             </div>
           </div>
         </div></div></div>
-  <div class="footer">🔄 Última actualización: 27 oct a las 21:52</div>
+  <div class="footer">🔄 Última actualización: 27 oct a las 21:53</div>
 
   <script>
     const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyPBrCQf5s8r9YisXc5wLMG7bLtyFph8Hg5Z2wPpv8vcScrkjmrsP7_8ej4gZuIUvg3UQ/exec';
